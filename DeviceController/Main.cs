@@ -105,12 +105,12 @@ namespace DeviceController
         {
             try
             {
-                Tools.ExchangeMemory();
-                BtnOverview_Click(null, null);
-                BtnClimate_Click(null, null);
-                BtnSpore_Click(null, null);
-                BtnCQ12_Click(null, null);
-                BtnOverview_Click(null, null);
+                Tools.ExchangeMemory();//进程内存交换到虚拟内存
+                BtnOverview_Click(null, null);//设备总览
+                BtnClimate_Click(null, null);//气象
+                BtnSpore_Click(null, null);//病情
+                BtnCQ12_Click(null, null);//虫情
+                BtnOverview_Click(null, null);//设备总览
                 ClimateTypeValue();
                 ClimateMainForm.climateInit();
                 Application.DoEvents();
