@@ -6,6 +6,7 @@ using DeviceController.DAL.DataUpload;
 using DeviceController.Models;
 using DeviceController.View.DevOverview;
 using LitJson;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,6 +43,19 @@ namespace DeviceController.View.Climate
         public static ClimateMessage climateMessage = null;
         public static ClimateKeepLive keepLive = null;
 
+        //自动采集数据
+        int inTimer1 = 0;
+        System.Timers.Timer timer1 = new System.Timers.Timer();
+        //自动上传数据
+        int inTimer2 = 0;
+        System.Timers.Timer timer2 = new System.Timers.Timer();
+        //发送心跳
+        int inTimer3 = 0;
+        System.Timers.Timer timer3 = new System.Timers.Timer();
+        //接收数据
+        int inTimer4 = 0;
+        System.Timers.Timer timer4 = new System.Timers.Timer();
+
         public ClimateMainForm()
         {
             InitializeComponent();
@@ -67,8 +81,20 @@ namespace DeviceController.View.Climate
         /// </summary>
         private void ClimateMainForm_Load(object sender, EventArgs e)
         {
-            //asc.controllInitializeSize(this);
-            //Init();
+            //读取配置文件
+            ReadConfigFile();
+            //自动采集信息
+            timer1.Elapsed += new ElapsedEventHandler(timer1_Elapsed);
+            timer1.Interval = int.Parse(SaveDataModel.climateConfigModel.collectionInterval) * 1000 * 60;
+            //自动上传数据
+            timer2.Elapsed += new ElapsedEventHandler(timer2_Elapsed);
+            timer2.Interval = int.Parse(SaveDataModel.climateConfigModel.uploadInterval) * 1000 * 60;
+            //心跳
+            timer3.Elapsed += new ElapsedEventHandler(timer3_Elapsed);
+            timer3.Interval = 30 * 1000;
+            //接收数据
+            timer4.Elapsed += new ElapsedEventHandler(timer4_Elapsed);
+            timer4.Interval = 200;
         }
 
         /// <summary>
@@ -79,13 +105,11 @@ namespace DeviceController.View.Climate
             try
             {
                 System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = false;
-                //读取配置文件
-                ReadConfigFile();
+
                 if (DB_Climate.DBInit())
                 {
                     //打开串口并创建长连接
                     CreateSerialPort();
-                    CollectionData();
                 }
             }
             catch (Exception ex)
@@ -244,6 +268,7 @@ namespace DeviceController.View.Climate
                     }
                     DebOutPut.DebLog("小气候串口打开成功！");
                     DebOutPut.WriteLog(LogType.Normal, "小气候串口打开成功！");
+                    timer1.Start();
                 }
                 //创建长连接
                 CreateScoketConnect();
@@ -295,93 +320,69 @@ namespace DeviceController.View.Climate
             }
 
         }
-
-        /// <summary>
-        /// 采集数据
-        /// </summary>
-        private void CollectionData()
-        {
-            try
-            {
-                if (isOpen)
-                {
-                    Thread collection_T = new Thread(T_AutomaticCollection);
-                    collection_T.IsBackground = true;
-                    collection_T.Start();
-                }
-                Thread upload_T = new Thread(T_AutomaticUpload);
-                upload_T.IsBackground = true;
-                upload_T.Start();
-            }
-            catch (Exception ex)
-            {
-                DebOutPut.DebErr(ex.ToString());
-                DebOutPut.WriteLog(LogType.Error, ex.ToString());
-            }
-        }
-
         /// <summary>
         /// 自动采集信息
         /// </summary>
-        private void T_AutomaticCollection()
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void timer1_Elapsed(object sender, ElapsedEventArgs e)
         {
-            while (isOpen)
+            if (isOpen)
             {
                 try
                 {
-                    //采集信息
-                    climateModel = new ClimateModel();
-                    climateModel.func = 101;
-                    climateModel.err = "";
-                    climateModel.devId = SaveDataModel.climateConfigModel.devId;
-                    climateModel.devtype = 1;
-                    climateMessage = new ClimateMessage();
-                    climateMessage.collectTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                    DebOutPut.DebLog("采集信息");
-                    ClimateCollectionInfo.GetCollertionInfo(serialPort1);
-                    if (climateModel == null || climateModel.message == null || climateMessage == null)
-                        return;
-                    climateModel.message = climateMessage;
-                    if (climateModel != null)
+                    if (Interlocked.Exchange(ref inTimer1, 1) == 0)
                     {
-                        DetectMemory();
-                        string JsonStr = JsonMapper.ToJson(climateModel);
-                        //入库
-                        String sql = "insert into Record (Flag,CollectTime,Data) values ('0','" + climateModel.message.collectTime + "',+'" + JsonStr + "')";
-                        if (DB_Climate.updateDatabase(sql) != 1)
-                            DebOutPut.DebLog("小气候采集时间为：" + climateModel.message.collectTime + "  数据插入数据库失败");
-                        else
-                            DebOutPut.DebLog("小气候采集时间为：" + climateModel.message.collectTime + "  数据插入数据库成功");
-                        climateMessage = null;
-                        climateModel = null;
+                        //采集信息
+                        climateModel = new ClimateModel();
+                        climateModel.func = 101;
+                        climateModel.err = "";
+                        climateModel.devId = SaveDataModel.climateConfigModel.devId;
+                        climateModel.devtype = 1;
+                        climateMessage = new ClimateMessage();
+                        climateMessage.collectTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                        DebOutPut.DebLog("采集信息");
+                        ClimateCollectionInfo.GetCollertionInfo(serialPort1);
+                        if (climateModel == null || climateModel.message == null || climateMessage == null)
+                            return;
+                        climateModel.message = climateMessage;
+                        if (climateModel != null)
+                        {
+                            DetectMemory();
+                            string JsonStr = JsonMapper.ToJson(climateModel);
+                            //入库
+                            String sql = "insert into Record (Flag,CollectTime,Data) values ('0','" + climateModel.message.collectTime + "',+'" + JsonStr + "')";
+                            if (DB_Climate.updateDatabase(sql) != 1)
+                                DebOutPut.DebLog("小气候采集时间为：" + climateModel.message.collectTime + "  数据插入数据库失败");
+                            else
+                                DebOutPut.DebLog("小气候采集时间为：" + climateModel.message.collectTime + "  数据插入数据库成功");
+                            climateMessage = null;
+                            climateModel = null;
+                        }
+                        DevOverviewMain.climateUpdataShow();
+                        Interlocked.Exchange(ref inTimer1, 0);
                     }
-                    DevOverviewMain.climateUpdataShow();
                 }
                 catch (Exception ex)
                 {
                     DebOutPut.DebErr(ex.ToString());
                     DebOutPut.WriteLog(LogType.Error, ex.ToString());
-                    if (client != null && client.clientSocket != null && client.clientSocket.Connected)
-                    {
-                        DebOutPut.DebLog("采集异常，断开连接");
-                        DebOutPut.WriteLog(LogType.Error, "采集异常，断开连接");
-                        if (client != null)
-                            client.SocketClose();
-                    }
+                    Interlocked.Exchange(ref inTimer1, 0);
                 }
-                Thread.Sleep(int.Parse(SaveDataModel.climateConfigModel.collectionInterval) * 1000 * 60);
             }
+
         }
 
         /// <summary>
         /// 自动上传数据
         /// </summary>
-        /// <param name="climateModelList">数据模型链表</param>
-        private void T_AutomaticUpload()
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void timer2_Elapsed(object sender, ElapsedEventArgs e)
         {
-            while (true)
+            try
             {
-                try
+                if (Interlocked.Exchange(ref inTimer2, 1) == 0)
                 {
                     if (client != null && client.clientSocket != null && client.clientSocket.Connected && newDataTime.AddMinutes(3) > DateTime.Now)
                     {
@@ -393,27 +394,27 @@ namespace DeviceController.View.Climate
                         {
                             if (client != null && client.clientSocket != null && client.clientSocket.Connected && newDataTime.AddMinutes(3) > DateTime.Now)
                             {
-                                client.UploadData(UploadDataType.Climate, UploadTable.Rows[i]["Data"].ToString(), UploadTable.Rows[i]["CollectTime"].ToString());//上传数据
+                                client.SendData(UploadTable.Rows[i]["Data"] + "");//上传数据
                                 DebOutPut.DebLog("当前发送第  " + (i + 1) + "  个，数据为:  " + UploadTable.Rows[i]["Data"].ToString());
                                 Thread.Sleep(2000);
                             }
                         }
                         UploadTable.Dispose();
                     }
+                    Interlocked.Exchange(ref inTimer2, 0);
                 }
-                catch (Exception ex)
+            }
+            catch (Exception ex)
+            {
+                DebOutPut.DebErr(ex.ToString());
+                DebOutPut.WriteLog(LogType.Error, ex.ToString());
+                if (client != null && client.clientSocket != null && client.clientSocket.Connected)
                 {
-                    DebOutPut.DebErr(ex.ToString());
-                    DebOutPut.WriteLog(LogType.Error, ex.ToString());
-                    if (client != null && client.clientSocket != null && client.clientSocket.Connected)
-                    {
-                        DebOutPut.DebLog("上传异常，断开连接");
-                        DebOutPut.WriteLog(LogType.Error, "上传异常，断开连接");
-                        if (client != null)
-                            client.SocketClose();
-                    }
+                    DebOutPut.DebLog("上传异常，断开连接");
+                    DebOutPut.WriteLog(LogType.Error, "上传异常，断开连接");
+                    client.SocketClose();
                 }
-                Thread.Sleep(int.Parse(SaveDataModel.climateConfigModel.uploadInterval) * 1000 * 60);
+                Interlocked.Exchange(ref inTimer2, 0);
             }
         }
 
@@ -476,7 +477,7 @@ namespace DeviceController.View.Climate
             }
         }
 
-        static readonly object SequenceLock1 = new object();
+        int inReceivedData = 0;
         /// <summary>
         /// 收到数据处理--不同的协议格式，数据处理方式不同
         /// </summary>
@@ -485,7 +486,7 @@ namespace DeviceController.View.Climate
         {
             try
             {
-                lock (SequenceLock1)
+                if (Interlocked.Exchange(ref inReceivedData, 1) == 0)
                 {
                     DebOutPut.DebLog("协议:" + whichAgreement + "  收到:" + Regex.Replace(recStr, @"(\w{2})", "$1 ").Trim(' ').ToUpper());
                     DebOutPut.WriteLog(LogType.Normal, "协议:" + whichAgreement + "  收到:" + Regex.Replace(recStr, @"(\w{2})", "$1 ").Trim(' ').ToUpper());
@@ -493,7 +494,7 @@ namespace DeviceController.View.Climate
                     {
                         return;
                     }
-                    int a = whichAgreement;
+                    //int a = whichAgreement;
                     switch (whichAgreement)
                     {
                         case 1:
@@ -549,9 +550,9 @@ namespace DeviceController.View.Climate
                             climateEnvironmentsItem1.name = valueName1;
                             climateEnvironmentsItem1.value = (float.Parse(value1) * Slope1).ToString();
                             DebOutPut.DebLog("接收：" + climateEnvironmentsItem1.name);
-                            
+
                             DebOutPut.DebLog("接收：" + climateEnvironmentsItem1.value);
-                            DebOutPut.WriteLog(LogType.Normal, "接收：" + climateEnvironmentsItem1.name+":"+climateEnvironmentsItem1.value);
+                            DebOutPut.WriteLog(LogType.Normal, "接收：" + climateEnvironmentsItem1.name + ":" + climateEnvironmentsItem1.value);
                             if (climateMessage == null || climateMessage.environments == null || climateEnvironmentsItem1 == null)
                                 return;
                             climateMessage.environments.Add(climateEnvironmentsItem1);
@@ -696,11 +697,13 @@ namespace DeviceController.View.Climate
                             break;
                     }
                 }
+                Interlocked.Exchange(ref inReceivedData, 0);
             }
             catch (Exception ex)
             {
                 DebOutPut.DebErr(ex.ToString());
                 DebOutPut.WriteLog(LogType.Error, ex.ToString());
+                Interlocked.Exchange(ref inReceivedData, 0);
             }
 
         }
@@ -741,10 +744,9 @@ namespace DeviceController.View.Climate
                         DevOverviewMain.devRunNetCountUpdata();
                     }
                     DebOutPut.DebLog("小气候客户端连接成功!");
-                    //心跳
-                    Thread thread = new Thread(T_Keeplive);
-                    thread.IsBackground = true;
-                    thread.Start();
+                    timer2.Start();
+                    timer3.Start();
+                    timer4.Start();
                 }
             }
             catch (Exception ex)
@@ -759,12 +761,11 @@ namespace DeviceController.View.Climate
         /// <summary>
         /// 心跳保持
         /// </summary>
-        private void T_Keeplive()
+        private void timer3_Elapsed(object sender, ElapsedEventArgs e)
         {
-
-            while (true)
+            try
             {
-                try
+                if (Interlocked.Exchange(ref inTimer3, 1) == 0)
                 {
                     if (client == null || client.clientSocket == null || !client.clientSocket.Connected || newDataTime.AddMinutes(3) < DateTime.Now)
                     {
@@ -776,8 +777,7 @@ namespace DeviceController.View.Climate
                         }
                         if (isConnect)
                         {
-                            if (client != null)
-                                client.SocketClose();
+                            client.SocketClose();
                             DebOutPut.DebLog("连接已断开，正在重新连接...");
                             DebOutPut.WriteLog(LogType.Normal, "连接已断开，正在重新连接...");
                             Thread.Sleep(1000 * 60);
@@ -789,33 +789,81 @@ namespace DeviceController.View.Climate
                         //保活包体
                         keepLive = new ClimateKeepLive();
                         keepLive.message = "keep-alive";//数据
-                        keepLive.devId = SaveDataModel.climateConfigModel.devId;//设备id
+                        keepLive.devId = SaveDataModel.climateConfigModel == null ? "" : SaveDataModel.climateConfigModel.devId;//设备id
                         keepLive.func = 100;//功能码
                         keepLive.err = "";//错误
                         string data = Tools.ObjectToJson(ClimateMainForm.keepLive);
-                        client.UploadData(UploadDataType.ClimateKeepLive, data);
+                        client.SendData(data);
                         keepLive = null;
                     }
-                    Thread.Sleep(30 * 1000);
-                }
-                catch (Exception ex)
-                {
-                    DebOutPut.DebErr(ex.ToString());
-                    DebOutPut.WriteLog(LogType.Error, ex.ToString());
-                    if (client != null && client.clientSocket != null && client.clientSocket.Connected)
-                    {
-                        DebOutPut.DebLog("心跳异常，断开连接");
-                        DebOutPut.WriteLog(LogType.Error, "心跳异常，断开连接");
-                        if (client != null)
-                            client.SocketClose();
-
-                    }
-                    Thread.Sleep(30 * 1000);
+                    Interlocked.Exchange(ref inTimer3, 0);
                 }
             }
+            catch (Exception ex)
+            {
+                DebOutPut.DebErr(ex.ToString());
+                DebOutPut.WriteLog(LogType.Error, ex.ToString());
+                if (client != null && client.clientSocket != null && client.clientSocket.Connected)
+                {
+                    DebOutPut.DebLog("心跳异常，断开连接");
+                    DebOutPut.WriteLog(LogType.Error, "心跳异常，断开连接");
+                    client.SocketClose();
+                }
+                Interlocked.Exchange(ref inTimer3, 0);
+            }
+
         }
 
 
+        /// <summary>
+        /// 接收数据
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void timer4_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            try
+            {
+                if (Interlocked.Exchange(ref inTimer4, 1) == 0)
+                {
+                    if (client.clientSocket != null && client.clientSocket.Connected)
+                    {
+                        newDataTime = DateTime.Now;
+                        byte[] receive = new byte[1024];
+                        client.clientSocket.Receive(receive);
+                        string receiceMsg = Encoding.Default.GetString(receive);
+                        receiceMsg = receiceMsg.Substring(0, receiceMsg.LastIndexOf("}") + 1);
+                        DebOutPut.DebLog("Climate:收到数据:" + receiceMsg);
+                        JObject obj = JObject.Parse(receiceMsg);
+                        string func = obj["func"] + "";
+                        string devId = obj["devId"] + "";
+
+                        if (devId == SaveDataModel.climateConfigModel.devId)
+                        {
+                            if (func == "101")
+                            {
+                                string collectTime = obj["collectTime"] + "";
+                                string sql = "update Record Set Flag = '1' where CollectTime='" + collectTime + "'";
+                                DB_Climate.updateDatabase(sql);
+                            }
+                        }
+                    }
+                    Interlocked.Exchange(ref inTimer4, 0);
+                }
+            }
+            catch (Exception ex)
+            {
+                DebOutPut.DebErr(ex.ToString());
+                DebOutPut.WriteLog(LogType.Error, ex.ToString());
+                if (client.clientSocket != null && client.clientSocket.Connected)
+                {
+                    DebOutPut.DebLog("接收异常，断开连接");
+                    client.SocketClose();
+                }
+                Interlocked.Exchange(ref inTimer4, 0);
+            }
+
+        }
 
         /// <summary>
         /// 窗口即将关闭时
@@ -846,9 +894,11 @@ namespace DeviceController.View.Climate
                 if (client != null && client.clientSocket != null && client.clientSocket.Connected)
                 {
                     isConnect = false;
-                    if (client != null)
-                        client.SocketClose();
+                    client.SocketClose();
                     client = null;
+                    timer2.Stop();
+                    timer3.Stop();
+                    timer4.Stop();
                     DebOutPut.DebLog("小气候连接已读断开!");
                 }
                 if (isOpen)
@@ -856,6 +906,7 @@ namespace DeviceController.View.Climate
                     if (SerialPortCtrl.CloseSerialPort(serialPort1))
                     {
                         isOpen = false;
+                        timer1.Stop();
                     }
                 }
             }
@@ -976,7 +1027,7 @@ namespace DeviceController.View.Climate
         {
             try
             {
-                string sql = "select * from Record";
+                string sql = "select * from Record order by CollectTime desc ";
                 DataTable dt = DB_Climate.QueryDatabase(sql).Tables[0];
                 SaveDataModel.climateModelList.Clear();
                 for (int i = 0; i < dt.Rows.Count; i++)
@@ -984,7 +1035,7 @@ namespace DeviceController.View.Climate
                     ClimateModel myModel = JsonMapper.ToObject<ClimateModel>(dt.Rows[i]["Data"].ToString());
                     SaveDataModel.climateModelList.Add(myModel);
                 }
-                SaveDataModel.climateModelList.Reverse();
+                //SaveDataModel.climateModelList.Reverse();
                 this.Invoke(new Action(() =>
                 {
                     CreateListControl();
@@ -1001,17 +1052,17 @@ namespace DeviceController.View.Climate
         /// <summary>
         /// 锁
         /// </summary>
-        static readonly object SequenceLock = new object();
+        int inDataList = 0;
         /// <summary>
         /// 生成
         /// </summary>
         public void CreateListControl()
         {
-            lock (SequenceLock)
-            {
-                try
-                {
 
+            try
+            {
+                if (Interlocked.Exchange(ref inDataList, 1) == 0)
+                {
                     flowLayoutPanel1.Controls.Clear();
                     //Size panelSize = new Size(840, 142);
                     Size panelSize = new Size(flowLayoutPanel1.Size.Width - 20, flowLayoutPanel1.Size.Height / 5 + 15);
@@ -1064,8 +1115,8 @@ namespace DeviceController.View.Climate
                         listDataShow.Size = new Size(550, 125);
                         listDataShow.Location = new Point(230, 15);
                         listDataShow.Parent = panel;
-                        listDataShow.View = System.Windows.Forms.View.Details;
-                        listDataShow.HeaderStyle = ColumnHeaderStyle.None;
+                        listDataShow.View = System.Windows.Forms.View.Details;//列表展示
+                        listDataShow.HeaderStyle = ColumnHeaderStyle.None;//不显示标题
                         listDataShow.HideSelection = false;
                         listDataShow.BorderStyle = BorderStyle.None;
                         listDataShow.BackColor = Color.FromArgb(166, 197, 254);
@@ -1093,6 +1144,11 @@ namespace DeviceController.View.Climate
                             string company = DevOverviewMain.GetCompany(environments[j].name);
                             ListViewSubItem listViewSubItem = new ListViewSubItem();
                             listViewSubItem.Text = environments[j].value + " " + company;
+                            if (environments[j].name == "风向")
+                            {
+                                listViewSubItem.Text = Tools.WindDirectionSwitch(float.Parse(environments[j].value));
+                            }
+
                             listViewItem.SubItems.Add(listViewSubItem);
                             if (j + 1 < environments.Count)
                             {
@@ -1101,6 +1157,10 @@ namespace DeviceController.View.Climate
                                 string company1 = DevOverviewMain.GetCompany(environments[j + 1].name);
                                 ListViewSubItem listViewSubItem2 = new ListViewSubItem();
                                 listViewSubItem2.Text = environments[j + 1].value + " " + company1;
+                                if (environments[j + 1].name == "风向")
+                                {
+                                    listViewSubItem2.Text = Tools.WindDirectionSwitch(float.Parse(environments[j + 1].value));
+                                }
 
                                 listViewItem.SubItems.Add(listViewSubItem1);
                                 listViewItem.SubItems.Add(listViewSubItem2);
@@ -1109,14 +1169,16 @@ namespace DeviceController.View.Climate
                             listDataShow.Items.Add(listViewItem);
                         }
                     }
-                }
-                catch (Exception ex)
-                {
-                    DebOutPut.DebErr(ex.ToString());
-                    DebOutPut.WriteLog(LogType.Error, ex.ToString());
+                    Interlocked.Exchange(ref inDataList, 0);
+
                 }
             }
-
+            catch (Exception ex)
+            {
+                DebOutPut.DebErr(ex.ToString());
+                DebOutPut.WriteLog(LogType.Error, ex.ToString());
+                Interlocked.Exchange(ref inDataList, 0);
+            }
         }
 
         /// <summary>
@@ -1159,6 +1221,7 @@ namespace DeviceController.View.Climate
             try
             {
                 string str = "Delete * FROM Record";
+
                 int ret = DB_Climate.updateDatabase(str);
                 if (ret == -1)
                 {
@@ -1303,13 +1366,13 @@ namespace DeviceController.View.Climate
         /// <summary>
         /// 锁
         /// </summary>
-        static readonly object SendDataLock = new object();
+        int inSendData = 0;
 
         private void ManualSendData()
         {
-            lock (SendDataLock)
+            try
             {
-                try
+                if (Interlocked.Exchange(ref inSendData, 1) == 0)
                 {
                     if (client != null && client.clientSocket != null && client.clientSocket.Connected && newDataTime.AddMinutes(3) > DateTime.Now)
                     {
@@ -1321,27 +1384,29 @@ namespace DeviceController.View.Climate
                         {
                             if (client != null && client.clientSocket != null && client.clientSocket.Connected && newDataTime.AddMinutes(3) > DateTime.Now)
                             {
-                                client.UploadData(UploadDataType.Climate, UploadTable.Rows[i]["Data"].ToString(), UploadTable.Rows[i]["CollectTime"].ToString());//上传数据
+                                client.SendData(UploadTable.Rows[i]["Data"] + "");//上传数据
                                 DebOutPut.DebLog("当前发送第  " + (i + 1) + "  个，数据为:  " + UploadTable.Rows[i]["Data"].ToString());
                                 Thread.Sleep(2000);
                             }
                         }
                         UploadTable.Dispose();
                     }
-                }
-                catch (Exception ex)
-                {
-                    DebOutPut.DebErr(ex.ToString());
-                    DebOutPut.WriteLog(LogType.Error, ex.ToString());
-                    if (client != null && client.clientSocket != null && client.clientSocket.Connected)
-                    {
-                        DebOutPut.DebLog("上传异常，断开连接");
-                        DebOutPut.WriteLog(LogType.Error, "上传异常，断开连接");
-                        if (client != null)
-                            client.SocketClose();
-                    }
+                    Interlocked.Exchange(ref inSendData, 0);
                 }
             }
+            catch (Exception ex)
+            {
+                DebOutPut.DebErr(ex.ToString());
+                DebOutPut.WriteLog(LogType.Error, ex.ToString());
+                if (client != null && client.clientSocket != null && client.clientSocket.Connected)
+                {
+                    DebOutPut.DebLog("上传异常，断开连接");
+                    DebOutPut.WriteLog(LogType.Error, "上传异常，断开连接");
+                    if (client != null)
+                        client.SocketClose();
+                }
+            }
+
         }
     }
 }

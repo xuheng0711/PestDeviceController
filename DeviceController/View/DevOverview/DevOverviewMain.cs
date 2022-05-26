@@ -233,7 +233,7 @@ namespace DeviceController.View.DevOverview
         {
             try
             {
-                string sql = "select * from Record";
+                string sql = "select * from Record order by CollectTime desc";
                 DataTable dt = DB_Climate.QueryDatabase(sql).Tables[0];
                 SaveDataModel.climateModelList.Clear();
                 for (int i = 0; i < dt.Rows.Count; i++)
@@ -241,7 +241,7 @@ namespace DeviceController.View.DevOverview
                     ClimateModel myModel = JsonMapper.ToObject<ClimateModel>(dt.Rows[i]["Data"].ToString());
                     SaveDataModel.climateModelList.Add(myModel);
                 }
-                SaveDataModel.climateModelList.Reverse();
+                //SaveDataModel.climateModelList.Reverse();
                 if (SaveDataModel.climateModelList.Count > 0 && SaveDataModel.climateModelList[0].message.environments != null)
                 {
                     this.LabCollectionTime.Text = SaveDataModel.climateModelList[0].message.collectTime;
@@ -277,7 +277,7 @@ namespace DeviceController.View.DevOverview
 
                 ColumnHeader columnHeader1 = new ColumnHeader();
                 columnHeader1.Text = "环境值";
-                columnHeader1.Width = 115;
+                columnHeader1.Width = 130;
 
                 ColumnHeader columnHeader2 = new ColumnHeader();
                 columnHeader2.Text = "环境类型";
@@ -285,7 +285,7 @@ namespace DeviceController.View.DevOverview
 
                 ColumnHeader columnHeader3 = new ColumnHeader();
                 columnHeader3.Text = "环境值";
-                columnHeader3.Width = 115;
+                columnHeader3.Width = 130;
 
                 listView1.Columns.Add(columnHeader);
                 listView1.Columns.Add(columnHeader1);
@@ -305,6 +305,7 @@ namespace DeviceController.View.DevOverview
                     {
                         string fengxiang = Tools.WindDirectionSwitch(float.Parse(environments[i].value));
                         showsDic.Add(listViewItem.Text, fengxiang);
+                        listViewSubItem.Text = fengxiang;
                     }
                     else if (listViewItem.Text == "二氧化碳")
                     {
@@ -334,6 +335,7 @@ namespace DeviceController.View.DevOverview
                         {
                             string fengxiang = Tools.WindDirectionSwitch(float.Parse(environments[i + 1].value));
                             showsDic.Add(listViewSubItem1.Text, fengxiang);
+                            listViewSubItem2.Text = fengxiang;
                         }
                         else if (listViewSubItem1.Text == "二氧化碳")
                         {
@@ -1181,7 +1183,7 @@ namespace DeviceController.View.DevOverview
                         result = "℃";
                         break;
                     case "湿度":
-                        result = "%RH";
+                        result = "%";
                         break;
                     case "露点":
                         result = "℃";
@@ -1193,7 +1195,7 @@ namespace DeviceController.View.DevOverview
                         result = "mm";
                         break;
                     case "风向":
-                        result = "°";
+                        result = "";
                         break;
                     case "风速":
                         result = "m/s";
@@ -1202,7 +1204,7 @@ namespace DeviceController.View.DevOverview
                         result = "umo";
                         break;
                     case "雨量":
-                        result = "mm/min";
+                        result = "mm";
                         break;
                     case "土壤温度":
                         result = "℃";
@@ -1258,7 +1260,6 @@ namespace DeviceController.View.DevOverview
 
             return result;
         }
-
         #region 控件等比例缩放
         private float x;//定义当前窗体的宽度
         private float y;//定义当前窗体的高度
@@ -1358,11 +1359,6 @@ namespace DeviceController.View.DevOverview
         private void RBNormal_CheckedChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            climateUpdataFunc();
         }
     }
 }

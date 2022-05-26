@@ -110,7 +110,7 @@ namespace DeviceController
                 BtnClimate_Click(null, null);//气象
                 BtnSpore_Click(null, null);//病情
                 BtnCQ12_Click(null, null);//虫情
-                BtnOverview_Click(null, null);//设备总览
+                //BtnOverview_Click(null, null);//设备总览
                 ClimateTypeValue();
                 ClimateMainForm.climateInit();
                 Application.DoEvents();
@@ -711,6 +711,11 @@ namespace DeviceController
                         Win32API.PostMessage(ptr, Win32API.WM_CLOSE, IntPtr.Zero, IntPtr.Zero);
                         ((System.Timers.Timer)sender).Stop();
                     }
+                }
+
+                if (timeDown <= 0)
+                {
+                    timer1.Stop();
                 }
             }
             catch (Exception ex)

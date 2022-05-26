@@ -55,7 +55,7 @@ namespace DeviceController.DAL.DataUpload
         public string ip = "";
         public string port = "";
         public string devId = "";//设备ID
-     
+
         /// <summary>
         /// 构造函数
         /// </summary>
@@ -94,7 +94,7 @@ namespace DeviceController.DAL.DataUpload
             }
             catch (Exception ex)
             {
-                DebOutPut.DebErr(ex.ToString()+ "域名/IP:" + ip + " 无效，请关闭串口，确认参数设置无误后，重新打开!");
+                DebOutPut.DebErr(ex.ToString() + "域名/IP:" + ip + " 无效，请关闭串口，确认参数设置无误后，重新打开!");
                 DebOutPut.WriteLog(LogType.Error, ex.ToString() + "域名/IP:" + ip + " 无效，请关闭串口，确认参数设置无误后，重新打开!");
                 //关闭连接
                 SocketClose();
@@ -114,7 +114,7 @@ namespace DeviceController.DAL.DataUpload
                     Thread.Sleep(10);
                     clientSocket.Disconnect(false);
                     DebOutPut.DebLog("断开连接");
-                    DebOutPut.WriteLog(LogType.Normal, "CQ12断开连接");
+                    DebOutPut.WriteLog(LogType.Normal, "小气候断开连接");
                 }
             }
             catch (Exception ex)
@@ -134,99 +134,38 @@ namespace DeviceController.DAL.DataUpload
         /// <summary>
         /// 上传数据
         /// </summary>
-        /// <param name="uploadDataType">上传数据的数据类型</param>
-        public void UploadData(UploadDataType uploadDataType, string data,string collectTime=null)
+        /// <param name="data"></param>
+        public void SendData(string data)
         {
-            byte[] sendBytesClimate = null;
             try
             {
                 if (clientSocket == null || !clientSocket.Connected)
                 {
                     DebOutPut.DebLog("上传失败");
+                    SocketClose();
                     return;
                 }
-                Encoding encoding = Encoding.GetEncoding("gb2312");
-                switch (uploadDataType)
-                {
-                    case UploadDataType.Climate://小气候上传单条数据
-                                                //发送字节
-                        sendBytesClimate = encoding.GetBytes(data + "\r\n");
-                        clientSocket.Send(sendBytesClimate);
-                        DebOutPut.DebLog("Climate:发送:" + data);
-                        ReceiveData(UploadDataType.Climate, collectTime);
-                        break;
-                    case UploadDataType.ClimateKeepLive://小气候的保活
-                        //发送字节
-                        sendBytesClimate = encoding.GetBytes(data + "\r\n");
-                        clientSocket.Send(sendBytesClimate);
-                        DebOutPut.DebLog("ClimateKeepLive:发送:" + data);
-                        ReceiveData(UploadDataType.ClimateKeepLive);
-                        break;
 
-                    default:
-                        break;
+                byte[] sendBytes = Encoding.GetEncoding("gb2312").GetBytes(data + "\r\n");
+                int n = clientSocket.Send(sendBytes);
+                if (n != sendBytes.Length)
+                {
+                    DebOutPut.WriteLog(LogType.Normal, "Socket事件_发送失败:" + data);
+                    DebOutPut.DebLog("Socket事件_发送失败:" + data);
+                    return;
                 }
-                data = "";
-                sendBytesClimate = null;
+                else
+                {
+                    DebOutPut.WriteLog(LogType.Normal, "Socket事件_发送成功:" + data);
+                    DebOutPut.DebLog("Socket事件_发送成功:" + data);
+                    return;
+                }
             }
             catch (Exception ex)
             {
-                data = "";
-                sendBytesClimate = null;
                 DebOutPut.DebErr(ex.ToString());
                 DebOutPut.WriteLog(LogType.Error, ex.ToString());
                 SocketClose();
-            }
-        }
-
-        private static readonly object Lock = new object();
-
-        /// <summary>
-        /// 接收数据
-        /// </summary>
-        /// <param name="uploadDataType">接收数据的数据类型</param>
-        public void ReceiveData(UploadDataType uploadDataType,string collectTime = null)
-        {
-            lock (Lock)
-            {
-                byte[] receive = null;
-                string receiceMsg = "";
-                try
-                {
-                    switch (uploadDataType)
-                    {
-                        case UploadDataType.Climate:
-                           ClimateMainForm. newDataTime = DateTime.Now;
-                            //接收服务器信息
-                            receive = new byte[1024];
-                            clientSocket.Receive(receive);
-                            receiceMsg = Encoding.Default.GetString(receive);
-                            DebOutPut.DebLog("Climate:收到数据:" + receiceMsg);
-                            collectTime = "update Record Set Flag = '1' where CollectTime='" + collectTime + "'";
-                            DB_Climate.updateDatabase(collectTime);
-                            break;
-                        case UploadDataType.ClimateKeepLive:
-                            ClimateMainForm.newDataTime = DateTime.Now;
-                            //接收服务器信息
-                            receive = new byte[1024];
-                            clientSocket.Receive(receive);
-                            receiceMsg = Encoding.Default.GetString(receive);
-                            DebOutPut.DebLog("ClimateKeepLive:收到数据:" + receiceMsg);
-                            break;
-                        default:
-                            break;
-                    }
-                    receive = null;
-                    receiceMsg = "";
-                }
-                catch (Exception ex)
-                {
-                    receive = null;
-                    receiceMsg = "";
-                    DebOutPut.DebErr(ex.ToString());
-                    DebOutPut.WriteLog(LogType.Error, ex.ToString());
-                    SocketClose();
-                }
             }
         }
 
