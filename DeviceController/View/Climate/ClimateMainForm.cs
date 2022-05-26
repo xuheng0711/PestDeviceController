@@ -769,7 +769,6 @@ namespace DeviceController.View.Climate
                 {
                     if (client == null || client.clientSocket == null || !client.clientSocket.Connected || newDataTime.AddMinutes(3) < DateTime.Now)
                     {
-                        client = null;
                         if (PubField.devNetName.Contains("气象"))
                         {
                             PubField.devNetName.Remove("气象");
