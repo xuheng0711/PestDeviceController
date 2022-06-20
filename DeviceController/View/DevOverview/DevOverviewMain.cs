@@ -273,19 +273,19 @@ namespace DeviceController.View.DevOverview
                 listView1.Clear();
                 ColumnHeader columnHeader = new ColumnHeader();
                 columnHeader.Text = "环境类型";
-                columnHeader.Width = 115;
+                columnHeader.Width = 110;
 
                 ColumnHeader columnHeader1 = new ColumnHeader();
                 columnHeader1.Text = "环境值";
-                columnHeader1.Width = 130;
+                columnHeader1.Width = 135;
 
                 ColumnHeader columnHeader2 = new ColumnHeader();
                 columnHeader2.Text = "环境类型";
-                columnHeader2.Width = 115;
+                columnHeader2.Width = 110;
 
                 ColumnHeader columnHeader3 = new ColumnHeader();
                 columnHeader3.Text = "环境值";
-                columnHeader3.Width = 130;
+                columnHeader3.Width = 135;
 
                 listView1.Columns.Add(columnHeader);
                 listView1.Columns.Add(columnHeader1);
