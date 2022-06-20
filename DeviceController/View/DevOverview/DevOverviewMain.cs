@@ -548,6 +548,14 @@ namespace DeviceController.View.DevOverview
                     curMsg.Append("风    速:" + showsDic["风速"] + "\n\r");
                 else if (key == "雨量")
                     curMsg.Append("雨    量:" + showsDic["雨量"] + "\n\r");
+                else if (key == "土壤湿度")
+                    curMsg.Append("土壤湿度:" + showsDic["土壤湿度"] + "\n\r");
+                else if (key == "土壤温度")
+                    curMsg.Append("土壤温度:" + showsDic["土壤温度"] + "\n\r");
+                else if (key == "土壤PH")
+                    curMsg.Append("土壤 PH:" + showsDic["土壤PH"] + "\n\r");
+                else if (key == "土壤EC")
+                    curMsg.Append("土壤 EC:" + showsDic["土壤EC"] + "\n\r");
             }
             DebOutPut.DebLog("中文数据:" + curMsg.ToString());
             bt = StrToHex(curMsg.ToString());
@@ -649,8 +657,11 @@ namespace DeviceController.View.DevOverview
             //}
             List<string> re = new List<string>();
             foreach (var item in showsDic.Keys)
-                if (item != "温度" && item != "湿度" && item != "大气压" && item != "二氧化碳" && item != "风向" && item != "风速")
+            {
+                if (item != "温度" && item != "湿度" && item != "大气压" && item != "二氧化碳" && item != "风向" && item != "风速" && item != "土壤湿度" && item != "土壤温度" && item != "土壤PH" && item != "土壤EC")
                     re.Add(item);
+            }
+
             for (int i = 0; i < re.Count; i++)
                 showsDic.Remove(re[i]);
             List<string> ledShow = new List<string>();
@@ -698,6 +709,7 @@ namespace DeviceController.View.DevOverview
                     if (str != "")
                         ledShow.Add(str);
                 }
+
             }
             else if (showsDic.Count <= 4)
             {
@@ -733,6 +745,31 @@ namespace DeviceController.View.DevOverview
                     ledShow.Add(str);
 
             }
+
+            string ledContent = "";
+            if (showsDic.ContainsKey("土壤湿度"))
+                ledContent = "土壤湿度:" + showsDic["土壤湿度"];
+            if (ledContent != "")
+                ledShow.Add(ledContent);
+
+            ledContent = "";
+            if (showsDic.ContainsKey("土壤温度"))
+                ledContent = "土壤温度:" + showsDic["土壤温度"];
+            if (ledContent != "")
+                ledShow.Add(ledContent);
+
+            ledContent = "";
+            if (showsDic.ContainsKey("土壤PH"))
+                ledContent = "土壤PH:" + showsDic["土壤PH"];
+            if (ledContent != "")
+                ledShow.Add(ledContent);
+
+            ledContent = "";
+            if (showsDic.ContainsKey("土壤EC"))
+                ledContent = "土壤EC:" + showsDic["土壤EC"];
+            if (ledContent != "")
+                ledShow.Add(ledContent);
+
             while (ledShow.Count < 4)
                 ledShow.Add("");
             //发送要展示的数据
@@ -1209,6 +1246,9 @@ namespace DeviceController.View.DevOverview
                     case "土壤温度":
                         result = "℃";
                         break;
+                    case "土壤湿度":
+                        result = "%RH";
+                        break;
                     case "土壤水分":
                         result = "%";
                         break;
@@ -1247,6 +1287,12 @@ namespace DeviceController.View.DevOverview
                         break;
                     case "So2":
                         result = "ppm";
+                        break;
+                    case "土壤PH":
+                        result = "pH";
+                        break;
+                    case "土壤EC":
+                        result = "1us/cm";
                         break;
                     default:
                         break;

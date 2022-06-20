@@ -37,6 +37,7 @@ namespace DeviceController.View.Climate
         private bool isOpen = false;//串口是否打开
         public static int whichAgreement = 0;//判断走哪个协议格式
         public static string agreement9Add = "";//协议9的寄存器地址
+        public static string agreement10Add = "";//协议10的寄存器地址(三合一土壤传感器)
         public static DateTime newDataTime = DateTime.Parse("1970-01-01 00:00:00");
         //采集到的数据 数据模型
         public static ClimateModel climateModel = null;
@@ -692,6 +693,44 @@ namespace DeviceController.View.Climate
                             climateMessage.environments.Add(climateEnvironmentsItem9);
                             break;
                         case 10://协议10
+                            string valueName10 = "";
+                            float slope = 1;//斜率
+                            switch (agreement10Add)
+                            {
+                                case "12"://湿度
+                                    valueName10 = "土壤湿度";
+                                    slope = 0.1f;
+                                    break;
+                                case "13"://温度
+                                    valueName10 = "土壤温度";
+                                    slope = 0.1f;
+                                    break;
+                                case "06"://PH
+                                    valueName10 = "土壤PH";
+                                    slope = 0.01f;
+                                    break;
+                                case "15"://EC
+                                    valueName10 = "土壤EC";
+                                    slope = 1f;
+                                    break;
+                                default:
+                                    break;
+                            }
+
+                            if (string.IsNullOrEmpty(valueName10))
+                            {
+                                return;
+                            }
+                            string dataByteCount10 = Tools.SixteenToTen(recStr.Substring(4, 2));//读取字节数
+                            string value10 = "";
+                            value10 = Tools.NegComCodeToHex(recStr.Substring(6, int.Parse(dataByteCount10) * 2));
+                            float Slope10 = slope;//斜率
+                            ClimateEnvironmentsItem climateEnvironmentsItem10 = new ClimateEnvironmentsItem();
+                            climateEnvironmentsItem10.name = valueName10;
+                            climateEnvironmentsItem10.value = (float.Parse(value10) * Slope10).ToString();
+                            if (climateMessage == null || climateMessage.environments == null || climateEnvironmentsItem10 == null)
+                                return;
+                            climateMessage.environments.Add(climateEnvironmentsItem10);
                             break;
                         default:
                             break;
@@ -1111,7 +1150,7 @@ namespace DeviceController.View.Climate
 
                         ListView listDataShow = new ListView();
                         listDataShow.Font = font;
-                        listDataShow.Size = new Size(550, 125);
+                        listDataShow.Size = new Size(550, 180);
                         listDataShow.Location = new Point(230, 15);
                         listDataShow.Parent = panel;
                         listDataShow.View = System.Windows.Forms.View.Details;//列表展示
