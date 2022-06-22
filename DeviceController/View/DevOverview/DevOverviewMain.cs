@@ -1292,7 +1292,7 @@ namespace DeviceController.View.DevOverview
                         result = "pH";
                         break;
                     case "土壤EC":
-                        result = "1us/cm";
+                        result = "us/cm";
                         break;
                     default:
                         break;
