@@ -50,6 +50,8 @@ namespace BZ10.Common
         /// </summary>
         public static bool isDebView = false;
 #endif
+
+        public static string strTest = "";
         /// <summary>
         /// 锁
         /// </summary>
