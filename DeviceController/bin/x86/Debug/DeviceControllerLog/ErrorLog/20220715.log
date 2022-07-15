@@ -45,3 +45,26 @@
    在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
    在 DeviceController.Common.Tools.FileToBitmap(String fileName) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\Tools.cs:行号 200
    在 DeviceController.View.CQ12.CQ12MainForm.RefreshFLP() 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\View\CQ12\CQ12MainForm.cs:行号 3656
+
+[2022-07-15 15:01:37]System.UnauthorizedAccessException: 对注册表项“HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run”的访问被拒绝。
+   在 Microsoft.Win32.RegistryKey.Win32Error(Int32 errorCode, String str)
+   在 Microsoft.Win32.RegistryKey.CreateSubKeyInternal(String subkey, RegistryKeyPermissionCheck permissionCheck, Object registrySecurityObj, RegistryOptions registryOptions)
+   在 Microsoft.Win32.RegistryKey.CreateSubKey(String subkey, RegistryKeyPermissionCheck permissionCheck)
+   在 Microsoft.Win32.RegistryKey.CreateSubKey(String subkey)
+   在 DeviceController.Common.Tools.AutoStart(Boolean isAuto) 位置 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\Common\Tools.cs:行号 286
+
+[2022-07-15 15:01:42]System.IO.FileNotFoundException: 未能找到文件“I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\bin\x86\Debug\CQ12Config\CQ12GrabImg\20220418200000.bmp”。
+文件名:“I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\bin\x86\Debug\CQ12Config\CQ12GrabImg\20220418200000.bmp”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 DeviceController.Common.Tools.FileToBitmap(String fileName) 位置 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\Common\Tools.cs:行号 201
+   在 DeviceController.View.CQ12.CQ12MainForm.RefreshFLP() 位置 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\View\CQ12\CQ12MainForm.cs:行号 3656
+
+[2022-07-15 15:01:44]System.IO.FileNotFoundException: 未能找到文件“I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\bin\x86\Debug\CQ12Config\CQ12GrabImg\20220418200000.bmp”。
+文件名:“I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\bin\x86\Debug\CQ12Config\CQ12GrabImg\20220418200000.bmp”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 DeviceController.Common.Tools.FileToBitmap(String fileName) 位置 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\Common\Tools.cs:行号 201
+   在 DeviceController.View.CQ12.CQ12MainForm.RefreshFLP() 位置 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\View\CQ12\CQ12MainForm.cs:行号 3656
