@@ -1,0 +1,6 @@
+LedUser=zzokq    //若为http协议的LED屏则需要该用户名
+Ledpwd=123456 //若为http协议的LED屏则需要该密码
+LeddevID=1214120042 //LED屏的设备ID  若为空且为HTTP控制，则不执行向LED屏发送展示数据功能。
+LedTitle=祥符区八里湾基地 //Led屏显示的标题
+LedShowType=1 //0代表HTTP 5*5控制 、1代表串口 6*6/5*5控制 
+SerialPortLed=COM1 //Led屏串口 若指定串口无法打开且为串口控制，则不执行向LED屏发送展示数据功能。

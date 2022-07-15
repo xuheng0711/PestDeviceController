@@ -1,0 +1,908 @@
+
+[2022-05-24 09:45:50]System.IO.IOException: 由于线程退出或应用程序请求，已中止 I/O 操作。
+
+   在 System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   在 System.IO.Ports.SerialStream.EndWrite(IAsyncResult asyncResult)
+   在 System.IO.Ports.SerialStream.Write(Byte[] array, Int32 offset, Int32 count, Int32 timeout)
+   在 System.IO.Ports.SerialPort.Write(Byte[] buffer, Int32 offset, Int32 count)
+   在 DeviceController.Common.SerialPortCtrl.DataSend_CQ12(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 177
+
+[2022-05-24 09:47:56]System.IO.IOException: 由于线程退出或应用程序请求，已中止 I/O 操作。
+
+   在 System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   在 System.IO.Ports.SerialStream.EndWrite(IAsyncResult asyncResult)
+   在 System.IO.Ports.SerialStream.Write(Byte[] array, Int32 offset, Int32 count, Int32 timeout)
+   在 System.IO.Ports.SerialPort.Write(Byte[] buffer, Int32 offset, Int32 count)
+   在 DeviceController.Common.SerialPortCtrl.DataSend_CQ12(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 177
+
+[2022-05-24 09:47:57]System.IO.IOException: 由于线程退出或应用程序请求，已中止 I/O 操作。
+
+   在 System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   在 System.IO.Ports.SerialStream.BeginWriteCore(Byte[] array, Int32 offset, Int32 numBytes, AsyncCallback userCallback, Object stateObject)
+   在 System.IO.Ports.SerialStream.Write(Byte[] array, Int32 offset, Int32 count, Int32 timeout)
+   在 System.IO.Ports.SerialPort.Write(Byte[] buffer, Int32 offset, Int32 count)
+   在 DeviceController.Common.SerialPortCtrl.DataSend_CQ12(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 177
+
+[2022-05-24 09:51:12]System.Exception: 异常
+   在 DeviceController.DAL.DataUpload.ScoketClient.ReceiveData(UploadDataType uploadDataType, String collectTime) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\DAL\DataUpload\ScoketClient.cs:行号 211
+
+[2022-05-24 09:53:01]System.Exception: 异常
+   在 DeviceController.DAL.DataUpload.ScoketClient.ReceiveData(UploadDataType uploadDataType, String collectTime) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\DAL\DataUpload\ScoketClient.cs:行号 211
+
+[2022-05-24 11:05:11]串口:COM6 初始化失败(第1次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:05:11]串口:COM6 初始化失败(第2次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:05:11]串口:COM6 初始化失败(第3次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:05:11]串口:COM6 初始化失败(第4次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:05:47]System.IO.FileNotFoundException: 未能找到文件“I:\维护项目\ThreeInOne\DeviceController\DeviceController\bin\x86\Debug\CQ12Config\CQ12GrabImg\20220418200000.bmp”。
+文件名:“I:\维护项目\ThreeInOne\DeviceController\DeviceController\bin\x86\Debug\CQ12Config\CQ12GrabImg\20220418200000.bmp”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 DeviceController.Common.Tools.FileToBitmap(String fileName) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\Tools.cs:行号 200
+   在 DeviceController.View.CQ12.CQ12MainForm.RefreshFLP() 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\View\CQ12\CQ12MainForm.cs:行号 3656
+
+[2022-05-24 11:06:43]串口:COM6 初始化失败(第1次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:06:43]串口:COM6 初始化失败(第2次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:06:43]串口:COM6 初始化失败(第3次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:06:43]串口:COM6 初始化失败(第4次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:07:04]串口:COM6 初始化失败(第1次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:07:04]串口:COM6 初始化失败(第2次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:07:04]串口:COM6 初始化失败(第3次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:07:04]串口:COM6 初始化失败(第4次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:11:24]串口:COM6 初始化失败(第1次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:11:24]串口:COM6 初始化失败(第2次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:11:24]串口:COM6 初始化失败(第3次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:11:24]串口:COM6 初始化失败(第4次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:12:15]串口:COM6 初始化失败(第1次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:12:15]串口:COM6 初始化失败(第2次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:12:15]串口:COM6 初始化失败(第3次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:12:15]串口:COM6 初始化失败(第4次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:12:20]System.IO.FileNotFoundException: 未能找到文件“I:\维护项目\ThreeInOne\DeviceController\DeviceController\bin\x86\Debug\CQ12Config\CQ12GrabImg\20220418200000.bmp”。
+文件名:“I:\维护项目\ThreeInOne\DeviceController\DeviceController\bin\x86\Debug\CQ12Config\CQ12GrabImg\20220418200000.bmp”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 DeviceController.Common.Tools.FileToBitmap(String fileName) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\Tools.cs:行号 200
+   在 DeviceController.View.CQ12.CQ12MainForm.RefreshFLP() 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\View\CQ12\CQ12MainForm.cs:行号 3656
+
+[2022-05-24 11:12:37]串口:COM6 初始化失败(第1次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:12:37]串口:COM6 初始化失败(第2次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:12:37]串口:COM6 初始化失败(第3次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:12:37]串口:COM6 初始化失败(第4次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:13:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:14:26]串口:COM6 初始化失败(第1次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:14:27]串口:COM6 初始化失败(第2次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:14:28]串口:COM6 初始化失败(第3次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:14:29]串口:COM6 初始化失败(第4次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:14:43]Newtonsoft.Json.JsonReaderException: Additional text encountered after finished reading JSON content: {. Path '', line 2, position 0.
+   在 Newtonsoft.Json.JsonTextReader.Read()
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value)
+   在 BZ10.MainForm.dealMsg(String jsonText) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\View\Spore\MainForm.cs:行号 1256
+
+[2022-05-24 11:15:03]System.IO.FileNotFoundException: 未能找到文件“I:\维护项目\ThreeInOne\DeviceController\DeviceController\bin\x86\Debug\CQ12Config\CQ12GrabImg\20220418200000.bmp”。
+文件名:“I:\维护项目\ThreeInOne\DeviceController\DeviceController\bin\x86\Debug\CQ12Config\CQ12GrabImg\20220418200000.bmp”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 DeviceController.Common.Tools.FileToBitmap(String fileName) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\Tools.cs:行号 200
+   在 DeviceController.View.CQ12.CQ12MainForm.RefreshFLP() 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\View\CQ12\CQ12MainForm.cs:行号 3656
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:34]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:18:36]串口:COM6 初始化失败(第1次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:18:36]串口:COM6 初始化失败(第2次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:18:36]串口:COM6 初始化失败(第3次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:18:36]串口:COM6 初始化失败(第4次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:21:27]串口:COM6 初始化失败(第1次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:21:27]串口:COM6 初始化失败(第2次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:21:27]串口:COM6 初始化失败(第3次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:21:27]串口:COM6 初始化失败(第4次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:27]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 11:22:29]串口:COM6 初始化失败(第1次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:22:29]串口:COM6 初始化失败(第2次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:22:29]串口:COM6 初始化失败(第3次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 11:22:29]串口:COM6 初始化失败(第4次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 14:29:27]串口:COM6 初始化失败(第1次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 14:29:27]串口:COM6 初始化失败(第2次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 14:29:27]串口:COM6 初始化失败(第3次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 14:29:27]串口:COM6 初始化失败(第4次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 14:29:35]System.IO.FileNotFoundException: 未能找到文件“I:\维护项目\ThreeInOne\DeviceController\DeviceController\bin\x86\Debug\CQ12Config\CQ12GrabImg\20220418200000.bmp”。
+文件名:“I:\维护项目\ThreeInOne\DeviceController\DeviceController\bin\x86\Debug\CQ12Config\CQ12GrabImg\20220418200000.bmp”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 DeviceController.Common.Tools.FileToBitmap(String fileName) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\Tools.cs:行号 200
+   在 DeviceController.View.CQ12.CQ12MainForm.RefreshFLP() 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\View\CQ12\CQ12MainForm.cs:行号 3656
+
+[2022-05-24 14:29:36]System.IO.FileNotFoundException: 未能找到文件“I:\维护项目\ThreeInOne\DeviceController\DeviceController\bin\x86\Debug\CQ12Config\CQ12GrabImg\20220418200000.bmp”。
+文件名:“I:\维护项目\ThreeInOne\DeviceController\DeviceController\bin\x86\Debug\CQ12Config\CQ12GrabImg\20220418200000.bmp”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 DeviceController.Common.Tools.FileToBitmap(String fileName) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\Tools.cs:行号 200
+   在 DeviceController.View.CQ12.CQ12MainForm.RefreshFLP() 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\View\CQ12\CQ12MainForm.cs:行号 3656
+
+[2022-05-24 14:30:36]客户端未连接，采集数据无法上传，请关闭串口，确认参数设置无误后，重新打开!
+
+[2022-05-24 14:30:37]串口:COM6 初始化失败(第1次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 14:30:37]串口:COM6 初始化失败(第2次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 14:30:37]串口:COM6 初始化失败(第3次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 14:30:37]串口:COM6 初始化失败(第4次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 14:30:42]System.IO.FileNotFoundException: 未能找到文件“I:\维护项目\ThreeInOne\DeviceController\DeviceController\bin\x86\Debug\CQ12Config\CQ12GrabImg\20220418200000.bmp”。
+文件名:“I:\维护项目\ThreeInOne\DeviceController\DeviceController\bin\x86\Debug\CQ12Config\CQ12GrabImg\20220418200000.bmp”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 DeviceController.Common.Tools.FileToBitmap(String fileName) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\Tools.cs:行号 200
+   在 DeviceController.View.CQ12.CQ12MainForm.RefreshFLP() 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\View\CQ12\CQ12MainForm.cs:行号 3656
+
+[2022-05-24 14:31:03]System.IO.FileNotFoundException: 未能找到文件“I:\维护项目\ThreeInOne\DeviceController\DeviceController\bin\x86\Debug\CQ12Config\CQ12GrabImg\20220418200000.bmp”。
+文件名:“I:\维护项目\ThreeInOne\DeviceController\DeviceController\bin\x86\Debug\CQ12Config\CQ12GrabImg\20220418200000.bmp”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 DeviceController.Common.Tools.FileToBitmap(String fileName) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\Tools.cs:行号 200
+   在 DeviceController.View.CQ12.CQ12MainForm.RefreshFLP() 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\View\CQ12\CQ12MainForm.cs:行号 3656
+
+[2022-05-24 15:24:44]串口:COM6 初始化失败(第1次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 15:24:44]串口:COM6 初始化失败(第2次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 15:24:44]串口:COM6 初始化失败(第3次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 15:24:45]串口:COM6 初始化失败(第4次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 15:32:48]串口:COM6 初始化失败(第1次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 15:32:48]串口:COM6 初始化失败(第2次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 15:32:48]串口:COM6 初始化失败(第3次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 15:32:48]串口:COM6 初始化失败(第4次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 15:32:51]System.IO.FileNotFoundException: 未能找到文件“I:\维护项目\ThreeInOne\DeviceController\DeviceController\bin\x86\Debug\CQ12Config\CQ12GrabImg\20220418200000.bmp”。
+文件名:“I:\维护项目\ThreeInOne\DeviceController\DeviceController\bin\x86\Debug\CQ12Config\CQ12GrabImg\20220418200000.bmp”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 DeviceController.Common.Tools.FileToBitmap(String fileName) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\Tools.cs:行号 200
+   在 DeviceController.View.CQ12.CQ12MainForm.RefreshFLP() 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\View\CQ12\CQ12MainForm.cs:行号 3656
+
+[2022-05-24 15:41:06]串口:COM6 初始化失败(第1次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 15:41:06]串口:COM6 初始化失败(第2次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 15:41:06]串口:COM6 初始化失败(第3次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 15:41:06]串口:COM6 初始化失败(第4次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 15:55:04]串口:COM6 初始化失败(第1次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 15:55:04]串口:COM6 初始化失败(第2次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 15:55:04]串口:COM6 初始化失败(第3次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 15:55:04]串口:COM6 初始化失败(第4次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-24 17:54:57]System.IO.IOException: 由于线程退出或应用程序请求，已中止 I/O 操作。
+
+   在 System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   在 System.IO.Ports.SerialStream.EndWrite(IAsyncResult asyncResult)
+   在 System.IO.Ports.SerialStream.Write(Byte[] array, Int32 offset, Int32 count, Int32 timeout)
+   在 System.IO.Ports.SerialPort.Write(Byte[] buffer, Int32 offset, Int32 count)
+   在 DeviceController.Common.SerialPortCtrl.DataSend_CQ12(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 177
+
+[2022-05-24 17:54:58]System.IO.IOException: 由于线程退出或应用程序请求，已中止 I/O 操作。
+
+   在 System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   在 System.IO.Ports.SerialStream.EndWrite(IAsyncResult asyncResult)
+   在 System.IO.Ports.SerialStream.Write(Byte[] array, Int32 offset, Int32 count, Int32 timeout)
+   在 System.IO.Ports.SerialPort.Write(Byte[] buffer, Int32 offset, Int32 count)
+   在 DeviceController.Common.SerialPortCtrl.DataSend_CQ12(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 177
+
+[2022-05-24 17:59:20]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:20]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:20]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:20]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:20]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:20]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:20]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:20]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:20]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:20]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:20]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:20]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:21]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:21]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:21]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:21]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:21]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:21]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:21]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:21]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:21]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:21]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:21]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:21]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:21]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:21]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:21]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:21]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:21]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:21]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:21]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:21]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117
+
+[2022-05-24 17:59:21]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_Climate(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 117

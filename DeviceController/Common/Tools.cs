@@ -55,6 +55,7 @@ namespace DeviceController.Common
 
         public static string WindDirectionSwitch(float degrees)
         {
+            //测试
             int index = 0;
             if (348.75 <= degrees && degrees <= 360)
             {

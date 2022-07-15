@@ -1,0 +1,15 @@
+
+[2022-05-23 17:33:45]串口:COM6 初始化失败(第1次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-23 17:33:45]串口:COM6 初始化失败(第2次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-23 17:33:45]串口:COM6 初始化失败(第3次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-23 17:33:46]串口:COM6 初始化失败(第4次)——对端口“COM6”的访问被拒绝。
+
+[2022-05-23 17:33:47]System.UnauthorizedAccessException: 对注册表项“HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run”的访问被拒绝。
+   在 Microsoft.Win32.RegistryKey.Win32Error(Int32 errorCode, String str)
+   在 Microsoft.Win32.RegistryKey.CreateSubKeyInternal(String subkey, RegistryKeyPermissionCheck permissionCheck, Object registrySecurityObj, RegistryOptions registryOptions)
+   在 Microsoft.Win32.RegistryKey.CreateSubKey(String subkey, RegistryKeyPermissionCheck permissionCheck)
+   在 Microsoft.Win32.RegistryKey.CreateSubKey(String subkey)
+   在 DeviceController.Common.Tools.AutoStart(Boolean isAuto) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\Tools.cs:行号 285

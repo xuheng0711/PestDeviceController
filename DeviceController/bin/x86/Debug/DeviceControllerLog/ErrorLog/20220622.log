@@ -1,0 +1,21 @@
+
+[2022-06-22 09:55:30]System.UnauthorizedAccessException: 对注册表项“HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run”的访问被拒绝。
+   在 Microsoft.Win32.RegistryKey.Win32Error(Int32 errorCode, String str)
+   在 Microsoft.Win32.RegistryKey.CreateSubKeyInternal(String subkey, RegistryKeyPermissionCheck permissionCheck, Object registrySecurityObj, RegistryOptions registryOptions)
+   在 Microsoft.Win32.RegistryKey.CreateSubKey(String subkey, RegistryKeyPermissionCheck permissionCheck)
+   在 Microsoft.Win32.RegistryKey.CreateSubKey(String subkey)
+   在 DeviceController.Common.Tools.AutoStart(Boolean isAuto) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\Tools.cs:行号 285
+
+[2022-06-22 11:02:17]System.UnauthorizedAccessException: 对注册表项“HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run”的访问被拒绝。
+   在 Microsoft.Win32.RegistryKey.Win32Error(Int32 errorCode, String str)
+   在 Microsoft.Win32.RegistryKey.CreateSubKeyInternal(String subkey, RegistryKeyPermissionCheck permissionCheck, Object registrySecurityObj, RegistryOptions registryOptions)
+   在 Microsoft.Win32.RegistryKey.CreateSubKey(String subkey, RegistryKeyPermissionCheck permissionCheck)
+   在 Microsoft.Win32.RegistryKey.CreateSubKey(String subkey)
+   在 DeviceController.Common.Tools.AutoStart(Boolean isAuto) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\Tools.cs:行号 285
+
+[2022-06-22 11:03:06]System.UnauthorizedAccessException: 对注册表项“HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run”的访问被拒绝。
+   在 Microsoft.Win32.RegistryKey.Win32Error(Int32 errorCode, String str)
+   在 Microsoft.Win32.RegistryKey.CreateSubKeyInternal(String subkey, RegistryKeyPermissionCheck permissionCheck, Object registrySecurityObj, RegistryOptions registryOptions)
+   在 Microsoft.Win32.RegistryKey.CreateSubKey(String subkey, RegistryKeyPermissionCheck permissionCheck)
+   在 Microsoft.Win32.RegistryKey.CreateSubKey(String subkey)
+   在 DeviceController.Common.Tools.AutoStart(Boolean isAuto) 位置 I:\维护项目\ThreeInOne\DeviceController\DeviceController\Common\Tools.cs:行号 285

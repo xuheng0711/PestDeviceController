@@ -343,6 +343,7 @@ namespace DeviceController.View.Climate
                         climateMessage = new ClimateMessage();
                         climateMessage.collectTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                         DebOutPut.DebLog("采集信息");
+                       
                         ClimateCollectionInfo.GetCollertionInfo(serialPort1);
                         if (climateModel == null || climateModel.message == null || climateMessage == null)
                             return;

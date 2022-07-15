@@ -1,0 +1,10 @@
+G:\DeviceController\DeviceController\DeviceController\bin\Debug\DeviceController.exe.config
+G:\DeviceController\DeviceController\DeviceController\bin\Debug\DeviceController.exe
+G:\DeviceController\DeviceController\DeviceController\bin\Debug\DeviceController.pdb
+G:\DeviceController\DeviceController\DeviceController\obj\Debug\DeviceController.csprojAssemblyReference.cache
+G:\DeviceController\DeviceController\DeviceController\obj\Debug\DeviceController.Form1.resources
+G:\DeviceController\DeviceController\DeviceController\obj\Debug\DeviceController.Properties.Resources.resources
+G:\DeviceController\DeviceController\DeviceController\obj\Debug\DeviceController.csproj.GenerateResource.cache
+G:\DeviceController\DeviceController\DeviceController\obj\Debug\DeviceController.csproj.CoreCompileInputs.cache
+G:\DeviceController\DeviceController\DeviceController\obj\Debug\DeviceController.exe
+G:\DeviceController\DeviceController\DeviceController\obj\Debug\DeviceController.pdb
