@@ -7,7 +7,7 @@
     <ProjectGuid>{52533A6C-004B-4143-9650-5DFA784D4AFA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>DeviceController</RootNamespace>
-    <AssemblyName>DeviceController</AssemblyName>
+    <AssemblyName>PestDeviceController</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

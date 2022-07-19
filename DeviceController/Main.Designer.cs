@@ -37,10 +37,7 @@
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.LabTimeShow = new DevComponents.DotNetBar.LabelX();
             this.BtnHelp = new DevComponents.DotNetBar.ButtonX();
-            this.BtnClimate = new DevComponents.DotNetBar.ButtonX();
-            this.BtnSpore = new DevComponents.DotNetBar.ButtonX();
             this.BtnCQ12 = new DevComponents.DotNetBar.ButtonX();
-            this.BtnOverview = new DevComponents.DotNetBar.ButtonX();
             this.LabHint = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
@@ -63,17 +60,14 @@
             this.panelEx1.Controls.Add(this.labelX4);
             this.panelEx1.Controls.Add(this.LabTimeShow);
             this.panelEx1.Controls.Add(this.BtnHelp);
-            this.panelEx1.Controls.Add(this.BtnClimate);
-            this.panelEx1.Controls.Add(this.BtnSpore);
             this.panelEx1.Controls.Add(this.BtnCQ12);
-            this.panelEx1.Controls.Add(this.BtnOverview);
             this.panelEx1.Controls.Add(this.LabHint);
             this.panelEx1.Controls.Add(this.labelX1);
             this.panelEx1.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelEx1.Location = new System.Drawing.Point(0, 0);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(1920, 100);
+            this.panelEx1.Size = new System.Drawing.Size(800, 100);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -95,7 +89,7 @@
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX3.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelX3.ForeColor = System.Drawing.Color.White;
-            this.labelX3.Location = new System.Drawing.Point(1489, 40);
+            this.labelX3.Location = new System.Drawing.Point(369, 40);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(217, 24);
             this.labelX3.TabIndex = 14;
@@ -111,7 +105,7 @@
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX2.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelX2.ForeColor = System.Drawing.Color.White;
-            this.labelX2.Location = new System.Drawing.Point(1447, 40);
+            this.labelX2.Location = new System.Drawing.Point(327, 40);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(50, 24);
             this.labelX2.TabIndex = 13;
@@ -125,12 +119,13 @@
             this.BtnCheckUpdate.BackColor = System.Drawing.Color.Transparent;
             this.BtnCheckUpdate.ColorTable = DevComponents.DotNetBar.eButtonColor.BlueOrb;
             this.BtnCheckUpdate.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.BtnCheckUpdate.Location = new System.Drawing.Point(1734, 70);
+            this.BtnCheckUpdate.Location = new System.Drawing.Point(614, 70);
             this.BtnCheckUpdate.Name = "BtnCheckUpdate";
             this.BtnCheckUpdate.Size = new System.Drawing.Size(87, 30);
             this.BtnCheckUpdate.TabIndex = 12;
             this.BtnCheckUpdate.Text = "检查更新";
             this.BtnCheckUpdate.TextColor = System.Drawing.Color.White;
+            this.BtnCheckUpdate.Click += new System.EventHandler(this.BtnCheckUpdate_Click);
             // 
             // BtnQuit
             // 
@@ -139,7 +134,7 @@
             this.BtnQuit.BackColor = System.Drawing.Color.Transparent;
             this.BtnQuit.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
             this.BtnQuit.Font = new System.Drawing.Font("楷体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.BtnQuit.Location = new System.Drawing.Point(1874, 12);
+            this.BtnQuit.Location = new System.Drawing.Point(754, 12);
             this.BtnQuit.Name = "BtnQuit";
             this.BtnQuit.Size = new System.Drawing.Size(30, 22);
             this.BtnQuit.TabIndex = 10;
@@ -156,7 +151,7 @@
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX4.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.labelX4.ForeColor = System.Drawing.Color.White;
-            this.labelX4.Location = new System.Drawing.Point(1712, 40);
+            this.labelX4.Location = new System.Drawing.Point(592, 40);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(43, 24);
             this.labelX4.TabIndex = 9;
@@ -171,7 +166,7 @@
             this.LabTimeShow.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LabTimeShow.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.LabTimeShow.ForeColor = System.Drawing.Color.White;
-            this.LabTimeShow.Location = new System.Drawing.Point(1761, 40);
+            this.LabTimeShow.Location = new System.Drawing.Point(641, 40);
             this.LabTimeShow.Name = "LabTimeShow";
             this.LabTimeShow.Size = new System.Drawing.Size(143, 24);
             this.LabTimeShow.TabIndex = 8;
@@ -184,43 +179,13 @@
             this.BtnHelp.BackColor = System.Drawing.Color.Transparent;
             this.BtnHelp.ColorTable = DevComponents.DotNetBar.eButtonColor.BlueOrb;
             this.BtnHelp.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.BtnHelp.Location = new System.Drawing.Point(1821, 70);
+            this.BtnHelp.Location = new System.Drawing.Point(701, 70);
             this.BtnHelp.Name = "BtnHelp";
             this.BtnHelp.Size = new System.Drawing.Size(87, 30);
             this.BtnHelp.TabIndex = 7;
             this.BtnHelp.Text = "帮助";
             this.BtnHelp.TextColor = System.Drawing.Color.White;
             this.BtnHelp.Click += new System.EventHandler(this.BtnHelp_Click);
-            // 
-            // BtnClimate
-            // 
-            this.BtnClimate.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.BtnClimate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnClimate.BackColor = System.Drawing.Color.Transparent;
-            this.BtnClimate.ColorTable = DevComponents.DotNetBar.eButtonColor.BlueOrb;
-            this.BtnClimate.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.BtnClimate.Location = new System.Drawing.Point(1647, 70);
-            this.BtnClimate.Name = "BtnClimate";
-            this.BtnClimate.Size = new System.Drawing.Size(87, 30);
-            this.BtnClimate.TabIndex = 5;
-            this.BtnClimate.Text = "气象";
-            this.BtnClimate.TextColor = System.Drawing.Color.White;
-            this.BtnClimate.Click += new System.EventHandler(this.BtnClimate_Click);
-            // 
-            // BtnSpore
-            // 
-            this.BtnSpore.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.BtnSpore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnSpore.BackColor = System.Drawing.Color.Transparent;
-            this.BtnSpore.ColorTable = DevComponents.DotNetBar.eButtonColor.BlueOrb;
-            this.BtnSpore.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.BtnSpore.Location = new System.Drawing.Point(1560, 70);
-            this.BtnSpore.Name = "BtnSpore";
-            this.BtnSpore.Size = new System.Drawing.Size(87, 30);
-            this.BtnSpore.TabIndex = 4;
-            this.BtnSpore.Text = "病情";
-            this.BtnSpore.TextColor = System.Drawing.Color.White;
-            this.BtnSpore.Click += new System.EventHandler(this.BtnSpore_Click);
             // 
             // BtnCQ12
             // 
@@ -229,28 +194,13 @@
             this.BtnCQ12.BackColor = System.Drawing.Color.Transparent;
             this.BtnCQ12.ColorTable = DevComponents.DotNetBar.eButtonColor.BlueOrb;
             this.BtnCQ12.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.BtnCQ12.Location = new System.Drawing.Point(1473, 70);
+            this.BtnCQ12.Location = new System.Drawing.Point(515, 70);
             this.BtnCQ12.Name = "BtnCQ12";
             this.BtnCQ12.Size = new System.Drawing.Size(87, 30);
             this.BtnCQ12.TabIndex = 3;
             this.BtnCQ12.Text = "虫情";
             this.BtnCQ12.TextColor = System.Drawing.Color.White;
             this.BtnCQ12.Click += new System.EventHandler(this.BtnCQ12_Click);
-            // 
-            // BtnOverview
-            // 
-            this.BtnOverview.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.BtnOverview.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnOverview.BackColor = System.Drawing.Color.Transparent;
-            this.BtnOverview.ColorTable = DevComponents.DotNetBar.eButtonColor.BlueOrb;
-            this.BtnOverview.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.BtnOverview.Location = new System.Drawing.Point(1386, 70);
-            this.BtnOverview.Name = "BtnOverview";
-            this.BtnOverview.Size = new System.Drawing.Size(87, 30);
-            this.BtnOverview.TabIndex = 2;
-            this.BtnOverview.Text = "设备总览";
-            this.BtnOverview.TextColor = System.Drawing.Color.White;
-            this.BtnOverview.Click += new System.EventHandler(this.BtnOverview_Click);
             // 
             // LabHint
             // 
@@ -290,9 +240,9 @@
             this.panelEx2.Controls.Add(this.label61);
             this.panelEx2.DisabledBackColor = System.Drawing.Color.Empty;
             this.panelEx2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelEx2.Location = new System.Drawing.Point(0, 1048);
+            this.panelEx2.Location = new System.Drawing.Point(0, 568);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(1920, 32);
+            this.panelEx2.Size = new System.Drawing.Size(800, 32);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -308,7 +258,7 @@
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label27.ForeColor = System.Drawing.Color.White;
-            this.label27.Location = new System.Drawing.Point(1853, 9);
+            this.label27.Location = new System.Drawing.Point(733, 9);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(52, 14);
             this.label27.TabIndex = 19;
@@ -322,7 +272,7 @@
             this.LabVersion.AutoSize = true;
             this.LabVersion.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.LabVersion.ForeColor = System.Drawing.Color.White;
-            this.LabVersion.Location = new System.Drawing.Point(1758, 9);
+            this.LabVersion.Location = new System.Drawing.Point(638, 9);
             this.LabVersion.Name = "LabVersion";
             this.LabVersion.Size = new System.Drawing.Size(79, 14);
             this.LabVersion.TabIndex = 17;
@@ -334,7 +284,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(1683, 9);
+            this.label2.Location = new System.Drawing.Point(563, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 14);
             this.label2.TabIndex = 18;
@@ -346,7 +296,7 @@
             this.label61.AutoSize = true;
             this.label61.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label61.ForeColor = System.Drawing.Color.White;
-            this.label61.Location = new System.Drawing.Point(789, 9);
+            this.label61.Location = new System.Drawing.Point(-331, 9);
             this.label61.Name = "label61";
             this.label61.Size = new System.Drawing.Size(190, 14);
             this.label61.TabIndex = 16;
@@ -357,7 +307,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.panelEx2);
             this.Controls.Add(this.panelEx1);
             this.DoubleBuffered = true;
@@ -383,10 +333,7 @@
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.LabelX LabHint;
-        private DevComponents.DotNetBar.ButtonX BtnOverview;
         private DevComponents.DotNetBar.ButtonX BtnCQ12;
-        private DevComponents.DotNetBar.ButtonX BtnClimate;
-        private DevComponents.DotNetBar.ButtonX BtnSpore;
         private DevComponents.DotNetBar.ButtonX BtnHelp;
         private DevComponents.DotNetBar.LabelX LabTimeShow;
         private DevComponents.DotNetBar.LabelX labelX4;

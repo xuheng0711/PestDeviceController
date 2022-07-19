@@ -1,0 +1,31 @@
+
+[2022-07-19 10:03:23]System.ArgumentOutOfRangeException: 长度不能小于 0。
+参数名: length
+   在 System.String.Substring(Int32 startIndex, Int32 length)
+   在 DeviceController.View.CQ12.CQ12MainForm.BtnTurnTimeDefine_Click(Object sender, EventArgs e) 位置 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\View\CQ12\CQ12MainForm.cs:行号 3211
+
+[2022-07-19 10:03:23]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_CQ12(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 175
+
+[2022-07-19 11:00:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_CQ12(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 175
+
+[2022-07-19 11:00:24]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_CQ12(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 175
+
+[2022-07-19 11:00:25]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_CQ12(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 175
+
+[2022-07-19 11:00:27]System.ArgumentOutOfRangeException: 长度不能小于 0。
+参数名: length
+   在 System.String.Substring(Int32 startIndex, Int32 length)
+   在 DeviceController.View.CQ12.CQ12MainForm.BtnTurnTimeDefine_Click(Object sender, EventArgs e) 位置 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\View\CQ12\CQ12MainForm.cs:行号 3211
+
+[2022-07-19 11:00:33]System.ArgumentOutOfRangeException: 长度不能小于 0。
+参数名: length
+   在 System.String.Substring(Int32 startIndex, Int32 length)
+   在 DeviceController.View.CQ12.CQ12MainForm.BtnTurnTimeDefine_Click(Object sender, EventArgs e) 位置 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\View\CQ12\CQ12MainForm.cs:行号 3211

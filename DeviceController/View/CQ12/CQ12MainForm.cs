@@ -178,7 +178,7 @@ namespace DeviceController.View.CQ12
                 if (index == 3)
                 {
                     LabCurrState.Text = "启动相机失败!";
-                    DevOverviewMain.cQ12RunStateUpdata("", this.LabCurrState.Text.Trim());
+                    //DevOverviewMain.cQ12RunStateUpdata("", this.LabCurrState.Text.Trim());
                     return;
                 }
             }
@@ -1085,11 +1085,11 @@ namespace DeviceController.View.CQ12
                 {
                     newDataTime = DateTime.Now;
                     DebOutPut.DebLog("CQ12客户端连接成功!");
-                    if (!PubField.devNetName.Contains("虫情"))
-                    {
-                        PubField.devNetName.Add("虫情");
-                        DevOverviewMain.devRunNetCountUpdata();
-                    }
+                    //if (!PubField.devNetName.Contains("虫情"))
+                    //{
+                    //    PubField.devNetName.Add("虫情");
+                    //    DevOverviewMain.devRunNetCountUpdata();
+                    //}
                     timer1.Start();//发送数据
                     timer2.Start();//接收数据
                     timer3.Start();//心跳
@@ -3948,7 +3948,7 @@ namespace DeviceController.View.CQ12
                         {
                             //根据窗体缩放的比例确定控件的值
                             con.Width = Convert.ToInt32(System.Convert.ToSingle(mytag[0]) * newx);//宽度
-                            con.Height = Convert.ToInt32(System.Convert.ToSingle(mytag[1]) * newy);//高度
+                            //con.Height = Convert.ToInt32(System.Convert.ToSingle(mytag[1]) * newy);//高度
                             con.Left = Convert.ToInt32(System.Convert.ToSingle(mytag[2]) * newx);//左边距
                             con.Top = Convert.ToInt32(System.Convert.ToSingle(mytag[3]) * newy);//顶边距
                             Single currentSize = System.Convert.ToSingle(mytag[4]) * newy;//字体大小

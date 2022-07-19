@@ -1,6 +1,3 @@
-I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\bin\x86\Debug\DeviceController.exe.config
-I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\bin\x86\Debug\DeviceController.exe
-I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\bin\x86\Debug\DeviceController.pdb
 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\bin\x86\Debug\AForge.Controls.dll
 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\bin\x86\Debug\AForge.dll
 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\bin\x86\Debug\AForge.Imaging.dll
@@ -16,7 +13,6 @@ I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceControlle
 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\bin\x86\Debug\AForge.Video.xml
 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\bin\x86\Debug\AForge.Video.DirectShow.xml
 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\bin\x86\Debug\Newtonsoft.Json.xml
-I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\obj\x86\Debug\PestDeviceController.csproj.AssemblyReference.cache
 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\obj\x86\Debug\DeviceController.HintForm.resources
 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\obj\x86\Debug\DeviceController.Main.resources
 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\obj\x86\Debug\DeviceController.Properties.Resources.resources
@@ -30,5 +26,9 @@ I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceControlle
 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\obj\x86\Debug\PestDeviceController.csproj.GenerateResource.cache
 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\obj\x86\Debug\PestDeviceController.csproj.CoreCompileInputs.cache
 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\obj\x86\Debug\PestDeviceController.csproj.CopyComplete
-I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\obj\x86\Debug\DeviceController.exe
-I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\obj\x86\Debug\DeviceController.pdb
+I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\bin\x86\Debug\PestDeviceController.exe.config
+I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\bin\x86\Debug\PestDeviceController.exe
+I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\bin\x86\Debug\PestDeviceController.pdb
+I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\obj\x86\Debug\PestDeviceController.csproj.AssemblyReference.cache
+I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\obj\x86\Debug\PestDeviceController.exe
+I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\obj\x86\Debug\PestDeviceController.pdb

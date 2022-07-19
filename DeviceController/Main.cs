@@ -89,9 +89,9 @@ namespace DeviceController
             {
                 Init();
                 //自动更新
-                Thread updataSetup = new Thread(UpdataSetup_T);
-                updataSetup.IsBackground = true;
-                updataSetup.Start();
+                //Thread updataSetup = new Thread(UpdataSetup_T);
+                //updataSetup.IsBackground = true;
+                //updataSetup.Start();
             }
             catch (Exception ex)
             {
@@ -106,16 +106,7 @@ namespace DeviceController
             try
             {
                 Tools.ExchangeMemory();//进程内存交换到虚拟内存
-                BtnOverview_Click(null, null);//设备总览
-                BtnClimate_Click(null, null);//气象
-                BtnSpore_Click(null, null);//病情
                 BtnCQ12_Click(null, null);//虫情
-                //BtnOverview_Click(null, null);//设备总览
-                ClimateTypeValue();
-                ClimateMainForm.climateInit();
-                Application.DoEvents();
-                MainForm.bz10Init();
-                Application.DoEvents();
                 CQ12MainForm.cQ12Init();
                 Application.DoEvents();
                 this.LabVersion.Text = "V_" + System.Reflection.Assembly.GetEntryAssembly().GetName().Version.ToString();
@@ -758,6 +749,13 @@ namespace DeviceController
         private void labelX3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnCheckUpdate_Click(object sender, EventArgs e)
+        {
+            Thread updataSetup = new Thread(UpdataSetup_T);
+            updataSetup.IsBackground = true;
+            updataSetup.Start();
         }
     }
 }
