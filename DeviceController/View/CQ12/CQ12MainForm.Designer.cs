@@ -2659,7 +2659,7 @@
             // 
             this.BtnTimeSlotDefine3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnTimeSlotDefine3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BtnTimeSlotDefine3.Location = new System.Drawing.Point(313, 76);
+            this.BtnTimeSlotDefine3.Location = new System.Drawing.Point(313, 75);
             this.BtnTimeSlotDefine3.Name = "BtnTimeSlotDefine3";
             this.BtnTimeSlotDefine3.Size = new System.Drawing.Size(65, 24);
             this.BtnTimeSlotDefine3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -2748,7 +2748,7 @@
             // 
             this.BtnBugTimeDefine.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnBugTimeDefine.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BtnBugTimeDefine.Location = new System.Drawing.Point(195, 137);
+            this.BtnBugTimeDefine.Location = new System.Drawing.Point(195, 136);
             this.BtnBugTimeDefine.Name = "BtnBugTimeDefine";
             this.BtnBugTimeDefine.Size = new System.Drawing.Size(65, 24);
             this.BtnBugTimeDefine.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -2760,7 +2760,7 @@
             // 
             this.BtnShockTimeDefine.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnShockTimeDefine.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BtnShockTimeDefine.Location = new System.Drawing.Point(195, 105);
+            this.BtnShockTimeDefine.Location = new System.Drawing.Point(195, 104);
             this.BtnShockTimeDefine.Name = "BtnShockTimeDefine";
             this.BtnShockTimeDefine.Size = new System.Drawing.Size(65, 24);
             this.BtnShockTimeDefine.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -2772,7 +2772,7 @@
             // 
             this.BtnShockDefine.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnShockDefine.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BtnShockDefine.Location = new System.Drawing.Point(195, 73);
+            this.BtnShockDefine.Location = new System.Drawing.Point(195, 72);
             this.BtnShockDefine.Name = "BtnShockDefine";
             this.BtnShockDefine.Size = new System.Drawing.Size(65, 24);
             this.BtnShockDefine.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -2784,7 +2784,7 @@
             // 
             this.BtnHeatingTimeDefine.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnHeatingTimeDefine.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BtnHeatingTimeDefine.Location = new System.Drawing.Point(195, 40);
+            this.BtnHeatingTimeDefine.Location = new System.Drawing.Point(195, 39);
             this.BtnHeatingTimeDefine.Name = "BtnHeatingTimeDefine";
             this.BtnHeatingTimeDefine.Size = new System.Drawing.Size(65, 24);
             this.BtnHeatingTimeDefine.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -2796,7 +2796,7 @@
             // 
             this.BtnEnteringWormDefine.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.BtnEnteringWormDefine.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.BtnEnteringWormDefine.Location = new System.Drawing.Point(195, 8);
+            this.BtnEnteringWormDefine.Location = new System.Drawing.Point(195, 7);
             this.BtnEnteringWormDefine.Name = "BtnEnteringWormDefine";
             this.BtnEnteringWormDefine.Size = new System.Drawing.Size(65, 24);
             this.BtnEnteringWormDefine.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -3822,7 +3822,7 @@
             this.panel21.Controls.Add(this.label30);
             this.panel21.Location = new System.Drawing.Point(7, 11);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(932, 35);
+            this.panel21.Size = new System.Drawing.Size(700, 35);
             this.panel21.TabIndex = 5;
             // 
             // label30

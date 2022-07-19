@@ -1085,6 +1085,7 @@ namespace DeviceController.View.CQ12
                 {
                     newDataTime = DateTime.Now;
                     DebOutPut.DebLog("CQ12客户端连接成功!");
+                    DebOutPut.WriteLog(LogType.Normal, "CQ12客户端连接成功");
                     //if (!PubField.devNetName.Contains("虫情"))
                     //{
                     //    PubField.devNetName.Add("虫情");
@@ -1247,11 +1248,11 @@ namespace DeviceController.View.CQ12
                 {
                     if (clientSocket == null || !clientSocket.Connected || newDataTime.AddMinutes(3) < DateTime.Now)
                     {
-                        if (PubField.devNetName.Contains("虫情"))
-                        {
-                            PubField.devNetName.Remove("虫情");
-                            DevOverviewMain.devRunNetCountUpdata();
-                        }
+                        //if (PubField.devNetName.Contains("虫情"))
+                        //{
+                        //    PubField.devNetName.Remove("虫情");
+                        //    DevOverviewMain.devRunNetCountUpdata();
+                        //}
                         if (isConnect)
                         {
                             closeSocket();
@@ -3205,6 +3206,11 @@ namespace DeviceController.View.CQ12
         {
             try
             {
+                if (TurnTime.Text.Trim() == "")
+                {
+                    MessageBox.Show("转仓时间不能为空！", "提示");
+                    return;
+                }
                 //转仓时间
                 DebOutPut.DebLog("转仓时间");
                 Thread.Sleep(500);
