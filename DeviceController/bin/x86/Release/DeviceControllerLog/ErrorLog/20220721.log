@@ -1,0 +1,16 @@
+
+[2022-07-21 11:00:54]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_CQ12(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 175
+
+[2022-07-21 11:00:56]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_CQ12(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 175
+
+[2022-07-21 16:37:15]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_CQ12(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 175
+
+[2022-07-21 16:37:16]System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.DiscardOutBuffer()
+   在 DeviceController.Common.SerialPortCtrl.DataSend_CQ12(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 175

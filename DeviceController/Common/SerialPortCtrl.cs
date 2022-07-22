@@ -176,6 +176,7 @@ namespace DeviceController.Common
                 byte[] bytes = Tools.HexStrTobyte(Msg);
                 serialPort.Write(bytes, 0, bytes.Length);
                 DebOutPut.DebLog("发送:" + Msg.ToUpper());
+                //DebOutPut.WriteLog(LogType.Normal, "发送指令:" + Msg.ToUpper());
             }
             catch (Exception ex)
             {

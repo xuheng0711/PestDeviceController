@@ -119,7 +119,7 @@
             this.BtnCheckUpdate.BackColor = System.Drawing.Color.Transparent;
             this.BtnCheckUpdate.ColorTable = DevComponents.DotNetBar.eButtonColor.BlueOrb;
             this.BtnCheckUpdate.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.BtnCheckUpdate.Location = new System.Drawing.Point(614, 70);
+            this.BtnCheckUpdate.Location = new System.Drawing.Point(610, 70);
             this.BtnCheckUpdate.Name = "BtnCheckUpdate";
             this.BtnCheckUpdate.Size = new System.Drawing.Size(87, 30);
             this.BtnCheckUpdate.TabIndex = 12;
@@ -194,7 +194,7 @@
             this.BtnCQ12.BackColor = System.Drawing.Color.Transparent;
             this.BtnCQ12.ColorTable = DevComponents.DotNetBar.eButtonColor.BlueOrb;
             this.BtnCQ12.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.BtnCQ12.Location = new System.Drawing.Point(515, 70);
+            this.BtnCQ12.Location = new System.Drawing.Point(520, 70);
             this.BtnCQ12.Name = "BtnCQ12";
             this.BtnCQ12.Size = new System.Drawing.Size(87, 30);
             this.BtnCQ12.TabIndex = 3;

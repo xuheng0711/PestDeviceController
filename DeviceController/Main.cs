@@ -111,7 +111,7 @@ namespace DeviceController
                 Application.DoEvents();
                 this.LabVersion.Text = "V_" + System.Reflection.Assembly.GetEntryAssembly().GetName().Version.ToString();
                 timer2.Start();
-                Tools.AutoStart(false);
+                Tools.AutoStart(true);
                 if (DebOutPut.isDebView)
                 {
                     this.label27.Text = "测试版";

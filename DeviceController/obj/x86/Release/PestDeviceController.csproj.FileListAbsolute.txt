@@ -31,3 +31,4 @@ I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceControlle
 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\bin\x86\Release\PestDeviceController.pdb
 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\obj\x86\Release\PestDeviceController.exe
 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\obj\x86\Release\PestDeviceController.pdb
+I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\obj\x86\Release\PestDeviceController.csproj.AssemblyReference.cache

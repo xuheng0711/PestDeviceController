@@ -185,7 +185,7 @@ namespace DeviceController.View.CQ12
             catch (Exception ex)
             {
                 LabCurrState.Text = "相机异常!";
-                DevOverviewMain.cQ12RunStateUpdata("", this.LabCurrState.Text.Trim());
+                //DevOverviewMain.cQ12RunStateUpdata("", this.LabCurrState.Text.Trim());
                 DebOutPut.DebLog("新相机启动异常：" + ex.ToString());
                 DebOutPut.WriteLog(LogType.Error, "新相机启动异常：" + ex.ToString());
                 CameraClose();
@@ -1039,7 +1039,7 @@ namespace DeviceController.View.CQ12
                     if (!PubField.devRunName.Contains("虫情"))
                     {
                         PubField.devRunName.Add("虫情");
-                        DevOverviewMain.devRunNetCountUpdata();
+                        //DevOverviewMain.devRunNetCountUpdata();
                     }
                     DebOutPut.DebLog("CQ12串口打开成功！");
                     DebOutPut.WriteLog(LogType.Normal, "CQ12串口打开成功！");
@@ -1335,7 +1335,7 @@ namespace DeviceController.View.CQ12
                 //{
                 //    this.Invoke(new Action(() =>
                 //    {
-                //        ReceivedDataHandle(recStr);
+                ////        ReceivedDataHandle(recStr);
                 //        //this.Refresh();
                 //    }));
                 //}
@@ -1936,7 +1936,7 @@ namespace DeviceController.View.CQ12
                                     this.WorkMode.Value = false;
                                     this.ForceWork.Value = false;
                                     this.TimeSlotWork.Value = false;
-                                    DevOverviewMain.cQ12WorkModeUpdata(CQ12WorkMode.Normal);
+                                    //DevOverviewMain.cQ12WorkModeUpdata(CQ12WorkMode.Normal);
                                     isCanClick(false);
                                 }
                                 else if (workMode == "02")//强制工作
@@ -1944,7 +1944,7 @@ namespace DeviceController.View.CQ12
                                     this.WorkMode.Value = false;
                                     this.ForceWork.Value = true;
                                     this.TimeSlotWork.Value = false;
-                                    DevOverviewMain.cQ12WorkModeUpdata(CQ12WorkMode.Force);
+                                    //DevOverviewMain.cQ12WorkModeUpdata(CQ12WorkMode.Force);
                                     isCanClick(false);
                                 }
                                 else if (workMode == "03")//工作时间段工作
@@ -1952,7 +1952,7 @@ namespace DeviceController.View.CQ12
                                     this.WorkMode.Value = false;
                                     this.ForceWork.Value = false;
                                     this.TimeSlotWork.Value = true;
-                                    DevOverviewMain.cQ12WorkModeUpdata(CQ12WorkMode.TimeSolt);
+                                    //DevOverviewMain.cQ12WorkModeUpdata(CQ12WorkMode.TimeSolt);
                                     isCanClick(false);
                                 }
                                 else if (workMode == "04")//调试模式
@@ -1960,7 +1960,7 @@ namespace DeviceController.View.CQ12
                                     this.WorkMode.Value = true;
                                     this.ForceWork.Value = false;
                                     this.TimeSlotWork.Value = false;
-                                    DevOverviewMain.cQ12WorkModeUpdata(CQ12WorkMode.Debug);
+                                    //DevOverviewMain.cQ12WorkModeUpdata(CQ12WorkMode.Debug);
                                     isCanClick(true);
                                 }
                                 string turnTime = content.Substring(4, 4);//转仓时间
@@ -2216,7 +2216,7 @@ namespace DeviceController.View.CQ12
                                 if (waibucunchuqi == "0" && lvdaidianji == "0" && zhuancangdianji == "0" && lvdaidianjipaizhao == "0" && yushui == "0" && paizhao == "0" && paizhaopo == "0")
                                 {
                                     this.LabCurrState.Text = "正常";
-                                   // isPhoto = true;
+                                    // isPhoto = true;
                                 }
                                 else if (waibucunchuqi == "1")
                                 {
@@ -2227,17 +2227,17 @@ namespace DeviceController.View.CQ12
                                 else if (lvdaidianji == "1")
                                 {
                                     this.LabCurrState.Text = "履带电机初始化错误";
-                                   // isPhoto = true;
+                                    // isPhoto = true;
                                 }
                                 else if (zhuancangdianji == "1")
                                 {
                                     this.LabCurrState.Text = "转仓电机初始化错误";
-                                   // isPhoto = true;
+                                    // isPhoto = true;
                                 }
                                 else if (lvdaidianjipaizhao == "1")
                                 {
                                     this.LabCurrState.Text = "履带电机拍照位置错误";
-                                   // isPhoto = true;
+                                    // isPhoto = true;
                                 }
                                 else if (yushui == "1")
                                 {
@@ -2245,11 +2245,11 @@ namespace DeviceController.View.CQ12
                                     //isPhoto = true;
                                 }
 
-                        
+
                                 else if (paizhaopo == "1")
                                 {
                                     this.LabCurrState.Text = "拍照错误";
-                                    isPhoto = false ;
+                                    isPhoto = false;
                                 }
                                 if (paizhao == "1")
                                 {
@@ -2262,16 +2262,16 @@ namespace DeviceController.View.CQ12
                                         thread.Start();
                                     }
                                 }
-                                DevOverviewMain.cQ12RunStateUpdata(runState, this.LabCurrState.Text.Trim());
+                                //DevOverviewMain.cQ12RunStateUpdata(runState, this.LabCurrState.Text.Trim());
                                 if (this.LabCurrState.Text.Trim().Contains("错误"))
                                 {
                                     //30分钟之后
                                     if (startEXETime.AddMinutes(30) < DateTime.Now)
                                     {
-                                        if (MCURestartCount<3)
+                                        if (MCURestartCount < 3)
                                         {
                                             DebOutPut.DebLog("CQ12超过30分钟读取状态为错误信息");
-                                            DebOutPut.DebLog("CQ12单片机重启复位:第 "+ (MCURestartCount+1)+" 次");
+                                            DebOutPut.DebLog("CQ12单片机重启复位:第 " + (MCURestartCount + 1) + " 次");
                                             string msg7 = "AB 5A 03 60 00 5A AF";
                                             SerialPortCtrl.DataSend_CQ12(serialPort, msg7);
                                             Thread.Sleep(1000);
@@ -3755,19 +3755,29 @@ namespace DeviceController.View.CQ12
                 else
                 {
                     string picTime = "";//创建时间
-                    string bugCount = "";//害虫数目
+                    //string bugCount = "";//害虫数目
                     if (MessageBox.Show("确定要删除选中的数据吗？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                     {
                         string picName = (String)listView1.SelectedItems[0].Text;
                         picTime = picName.Substring(0, picName.LastIndexOf(" ")).Trim();
-                        bugCount = picName.Substring(picName.LastIndexOf(":") + 1, picName.Length - picName.LastIndexOf(":") - 1);
-                        picName = DateTime.Parse(picTime).ToString("yyyyMMddHHmmss") + "_" + ((bugCount == null) ? "0" : bugCount) + ".bmp";
+                        //bugCount = picName.Substring(picName.LastIndexOf(":") + 1, picName.Length - picName.LastIndexOf(":") - 1);
+                        //picName = DateTime.Parse(picTime).ToString("yyyyMMddHHmmss") + "_" + ((bugCount == null) ? "0" : bugCount) + ".bmp";
+                        picName = DateTime.Parse(picTime).ToString("yyyyMMddHHmmss") + ".bmp";
 
                         string picPath = PubField.basePath + "\\CQ12Config\\CQ12GrabImg\\" + picName;
                         if (File.Exists(picPath))
                         {
                             File.Delete(picPath);
-                            MessageBox.Show(this, "删除数据成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            string sql = string.Format("delete from Record where CollectTime='{0}'", picTime);
+                            int res = DB_CQ12.updateDatabase(sql);
+                            if (res > 0)
+                            {
+                                MessageBox.Show(this, "删除数据成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show(this, "删除数据失败，请重试！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
                             UpdataDataList();
                         }
 

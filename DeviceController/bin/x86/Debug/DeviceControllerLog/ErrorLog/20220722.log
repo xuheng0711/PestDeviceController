@@ -1,0 +1,62 @@
+
+[2022-07-22 09:15:45]System.IO.IOException: 由于线程退出或应用程序请求，已中止 I/O 操作。
+
+   在 System.IO.Ports.InternalResources.WinIOError(Int32 errorCode, String str)
+   在 System.IO.Ports.SerialStream.EndWrite(IAsyncResult asyncResult)
+   在 System.IO.Ports.SerialStream.Write(Byte[] array, Int32 offset, Int32 count, Int32 timeout)
+   在 System.IO.Ports.SerialPort.Write(Byte[] buffer, Int32 offset, Int32 count)
+   在 DeviceController.Common.SerialPortCtrl.DataSend_CQ12(SerialPort serialPort, String Msg) 位置 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\Common\SerialPortCtrl.cs:行号 177
+
+[2022-07-22 10:12:01]串口:COM7 初始化失败(第1次)——对端口“COM7”的访问被拒绝。
+
+[2022-07-22 10:12:01]串口:COM7 初始化失败(第2次)——对端口“COM7”的访问被拒绝。
+
+[2022-07-22 10:12:02]串口:COM7 初始化失败(第3次)——对端口“COM7”的访问被拒绝。
+
+[2022-07-22 10:12:02]串口:COM7 初始化失败(第4次)——对端口“COM7”的访问被拒绝。
+
+[2022-07-22 10:14:16]串口:COM7 初始化失败(第1次)——对端口“COM7”的访问被拒绝。
+
+[2022-07-22 10:14:16]串口:COM7 初始化失败(第2次)——对端口“COM7”的访问被拒绝。
+
+[2022-07-22 10:14:16]串口:COM7 初始化失败(第3次)——对端口“COM7”的访问被拒绝。
+
+[2022-07-22 10:14:17]串口:COM7 初始化失败(第4次)——对端口“COM7”的访问被拒绝。
+
+[2022-07-22 11:10:13]Newtonsoft.Json.JsonReaderException: Error reading JObject from JsonReader. Path '', line 0, position 0.
+   在 Newtonsoft.Json.Linq.JObject.Load(JsonReader reader, JsonLoadSettings settings)
+   在 Newtonsoft.Json.Linq.JObject.Parse(String json, JsonLoadSettings settings)
+   在 Newtonsoft.Json.Linq.JObject.Parse(String json)
+   在 DeviceController.View.CQ12.CQ12MainForm.timer2_Elapsed(Object sender, ElapsedEventArgs e) 位置 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\View\CQ12\CQ12MainForm.cs:行号 1215
+
+[2022-07-22 11:13:40]System.IO.FileNotFoundException: 未能找到文件“I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\bin\x86\Debug\CQ12Config\CQ12GrabImg\20220716044732.bmp”。
+文件名:“I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\bin\x86\Debug\CQ12Config\CQ12GrabImg\20220716044732.bmp”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 DeviceController.Common.Tools.FileToBitmap(String fileName) 位置 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\Common\Tools.cs:行号 201
+   在 DeviceController.View.CQ12.CQ12MainForm.RefreshFLP() 位置 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\View\CQ12\CQ12MainForm.cs:行号 3662
+
+[2022-07-22 11:13:45]System.IO.FileNotFoundException: 未能找到文件“I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\bin\x86\Debug\CQ12Config\CQ12GrabImg\20220716044732.bmp”。
+文件名:“I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\bin\x86\Debug\CQ12Config\CQ12GrabImg\20220716044732.bmp”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 DeviceController.Common.Tools.FileToBitmap(String fileName) 位置 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\Common\Tools.cs:行号 201
+   在 DeviceController.View.CQ12.CQ12MainForm.RefreshFLP() 位置 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\View\CQ12\CQ12MainForm.cs:行号 3662
+
+[2022-07-22 11:18:12]System.IO.FileNotFoundException: 未能找到文件“I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\bin\x86\Debug\CQ12Config\CQ12GrabImg\20220716044732.bmp”。
+文件名:“I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\bin\x86\Debug\CQ12Config\CQ12GrabImg\20220716044732.bmp”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 DeviceController.Common.Tools.FileToBitmap(String fileName) 位置 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\Common\Tools.cs:行号 201
+   在 DeviceController.View.CQ12.CQ12MainForm.RefreshFLP() 位置 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\View\CQ12\CQ12MainForm.cs:行号 3662
+
+[2022-07-22 11:20:09]System.IO.FileNotFoundException: 未能找到文件“I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\bin\x86\Debug\CQ12Config\CQ12GrabImg\20220716044732.bmp”。
+文件名:“I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\bin\x86\Debug\CQ12Config\CQ12GrabImg\20220716044732.bmp”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 DeviceController.Common.Tools.FileToBitmap(String fileName) 位置 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\Common\Tools.cs:行号 201
+   在 DeviceController.View.CQ12.CQ12MainForm.RefreshFLP() 位置 I:\维护项目\ThreeInOne\PestDeviceController\DeviceController\DeviceController\View\CQ12\CQ12MainForm.cs:行号 3662
